@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/client/menu :: area(~{:: main})}">
+<body th:fragment="main">
+   <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/client/index">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="/client/category">Mua bán</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container single_product_container">      
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="single_product_pics">
+                    <div class="row">
+                        <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
+                            <div class="single_product_thumbnails">
+                                <ul>
+                                    <li><img src="img/single_1_thumb.jpg" alt="" data-image="img/single_1.jpg"></li>
+                                    <li class="active"><img src="img/single_2_thumb.jpg" alt=""
+                                            data-image="img/single_2.jpg"></li>
+                                    <li><img src="img/single_3_thumb.jpg" alt="" data-image="img/single_3.jpg"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 image_col order-lg-2 order-1">
+                            <div class="single_product_image">
+                                <div class="single_product_image_background"
+                                    style="background-image:url(img/single_2.jpg)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="product_details">
+                    <div class="product_details_title">
+                        <h2>Pocket cotton sweatshirt</h2>
+                        <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque
+                            diam dolor, elementum etos lobortis des mollis ut...
+
+                        </p>
+                    </div>
+                    <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
+                        <span class="ti-truck"></span><span>Giao hàng miễn phí</span>
+                    </div>
+                    <div class="product_price">$495.00</div>
+                    <ul class="star_rating">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                    <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+                        <span>Quantity:</span>
+                        <div class="quantity_selector">
+                            <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                            <select name="" class="mdb-select md-form">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                            </select>
+                            <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="red_button add_to_cart_button"><input type="submit" value="Them vào giỏ hàng"
+                                class="btn btn-primary"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <section class="categories ">
+        <div class="container mt-3 mb-4">
+            <div class="service_info_ card-header  text-white text-uppercase">
+                Sản phẩm nổi bật
+            </div>
+            <div class="col-sm">
+                <div class="card" style="border: none;">
+
+                    <div class="card-body"></div>
+                    <div class="row">
+                        <div class="categories__slider owl-carousel">
+                            <div class="col-lg-3">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <img class="card-img-top img_infor "
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT781Uxl7bAyv7xKJ7zGNmVTWwkbctVI8g_IA&usqp=CAU"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title service_info"><a href="detail_cart.html"
+                                                    title="View Product">Product title</a></h4>
+                                            <p class="card-text service_info">Some quick example text to build on the
+                                                card title....</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="btn btn-danger btn-block">10tr500 VND </p>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <img class="card-img-top img_infor "
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT781Uxl7bAyv7xKJ7zGNmVTWwkbctVI8g_IA&usqp=CAU"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title service_info"><a href="detail_cart.html"
+                                                    title="View Product">Product title</a></h4>
+                                            <p class="card-text service_info">Some quick example text to build on the
+                                                card title....</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="btn btn-danger btn-block">10tr500 VND </p>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <img class="card-img-top img_infor "
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT781Uxl7bAyv7xKJ7zGNmVTWwkbctVI8g_IA&usqp=CAU"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title service_info"><a href="detail_cart.html"
+                                                    title="View Product">Product title</a></h4>
+                                            <p class="card-text service_info">Some quick example text to build on the
+                                                card title....</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="btn btn-danger btn-block">10tr500 VND </p>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <img class="card-img-top img_infor "
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT781Uxl7bAyv7xKJ7zGNmVTWwkbctVI8g_IA&usqp=CAU"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title service_info"><a href="detail_cart.html"
+                                                    title="View Product">Product title</a></h4>
+                                            <p class="card-text service_info">Some quick example text to build on the
+                                                card title....</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="btn btn-danger btn-block">10tr500 VND </p>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <img class="card-img-top img_infor "
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT781Uxl7bAyv7xKJ7zGNmVTWwkbctVI8g_IA&usqp=CAU"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title service_info"><a href="detail_cart.html"
+                                                    title="View Product">Product title</a></h4>
+                                            <p class="card-text service_info">Some quick example text to build on the
+                                                card title....</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="btn btn-danger btn-block">10tr500 VND </p>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
+    
+</body>
+</html>

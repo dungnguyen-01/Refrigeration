@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/admin/menu :: area(~{:: main})}">
+<head>
+
+</head>
+<body th:fragment="main">
+
+  <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+    data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+    <div class="page-wrapper">
+      <div class="page-breadcrumb">
+        <div class="row">
+          <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Tables</h4>
+            <div class="ms-auto text-end">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Library
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h2 style="text-align: center;" class="card-title">Chỉnh sửa danh mục</h2>
+                <div class="table-responsive">                 
+                    <form style="font-size: 15px;">
+                        <div class="modal-body">
+                            <div class="form-group">
+                              <label>Tên sản phẩm</label>
+                              <input placeholder="Tên sản phẩm" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                              <label>Loại sản phẩm</label>
+                              <select class="form-select">
+                                <option selected>Choose...</option>
+                                <option value="1">Tủ lạnh</option>
+                                <option value="2">Máy giặt</option>
+                                <option value="3">Điều hào</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label class="form-label" for="customFile">Chọn ảnh</label>
+                              <input type="file" class="form-control" id="customFile" />
+                            </div>
+                           
+                            <div class="form-group">
+                              <label>Mô tả</label>
+                              <textarea placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group" style="margin-left: 20px;">
+                            <input type="button" class="btn btn-primary" style="padding: 8px 50px;" data-dismiss="modal" value="Trở lại">
+                            <input type="submit" class="btn btn-success" style="padding:8px 50px;color: #fff;" value="Sữa">
+                          </div>
+                      </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

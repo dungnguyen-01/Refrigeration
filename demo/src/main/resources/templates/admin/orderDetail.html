@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org"
+ th:replace="~{/admin/menu :: area(~{:: main})}">
+
+<body th:fragment="main">
+
+     <div class="page-wrapper">
+      <div class="page-breadcrumb">
+        <div class="row">
+          <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Tables</h4>
+            <div class="ms-auto text-end">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Library
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h2 style="text-align: center;" class="card-title">Danh sách sản phẩm</h2>
+                <div class="table-responsive">
+                  <table id="zero_config" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>STT</th>
+                        <th>Tên KH</th>
+                        <th>Tên SP</th>
+                        <th>SDT</th>
+                        <th>Email</th>                      
+                        <th>Địa chỉ</th>
+                        <th>Thời gian</th>
+                        <th>Số lượng</th>
+                        <th>Note</th>                                        
+                        <th>Total</th>                                        
+                        <th>Trạng thái</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>2011/04/25</td>
+                        <td>$320,800</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011/04/25</td>
+                        <td>
+                          <a href="#" class="btn btn-danger" data-toggle="modal"><span>Xóa</span></a>
+                          <a href="#edit" class="btn btn-success" data-toggle="modal"><span>Sữa</span></a>
+                        
+                        </td>
+                      </tr>                     
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+  <div id="edit" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="add" method="post">
+          <div class="modal-header">
+            <h4 class="modal-title">Thông tin khách hàng</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Tên KH</label>
+              <input placeholder="Tên sản phẩm" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Tên SP</label>
+              <input placeholder="Tên sản phẩm" type="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>SDT </label>
+              <input placeholder="Số điện thoại" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input placeholder="Email" type="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Ngày</label>
+              <input placeholder="Ngày và giờ" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Mô tả</label>
+              <textarea placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>Tổng giá</label>
+              <input placeholder="Tổng giá" type="text" class="form-control" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="button" class="btn btn-danger" style="padding: 8px 30px;" data-dismiss="modal" value="Cancel">
+            <input type="submit" class="btn btn-success" style="padding:8px 30px;color: #fff;" value="Sữa">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ </body>
+
+</html>

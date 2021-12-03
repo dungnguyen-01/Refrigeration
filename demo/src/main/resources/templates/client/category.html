@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/client/menu :: area(~{:: main})}">
+<body th:fragment="main">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/client/index">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Mua bán</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>>
+
+<!--  -->
+<div class="container">
+    <div class="row">
+        <div class="col-12  col-lg-3">
+            <div class="card bg-light mb-3">
+                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Loại sản phẩm</div>
+                <ul class="list-group category_block">
+                    <li class="list-group-item"><a href="category.html">Tủ lạnh</a></li>
+                    <li class="list-group-item"><a href="category.html">Máy giặt</a></li>
+                    <li class="list-group-item"><a href="category.html">Máy điều hòa</a></li>
+                    <li class="list-group-item"><a href="category.html">Máy nước nóng lạnh</a></li>
+                    <li class="list-group-item"><a href="category.html">Máy rửa chén</a></li>
+                    <li class="list-group-item"><a href="category.html">Máy lọc nước</a></li>
+                </ul>
+            </div>
+            <div class="card bg-light mb-3 noibat">
+                <div class="card-header bg-success text-white text-uppercase">Sản phẩm mới</div>
+                <div class="card-body">
+                    <img class="img-fluid img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OgOfJYlMEBYwR8Ng19Apx6gUArMupHx1Lg&usqp=CAU" />
+                    <h5 class="card-title service_info">Dieu hoa</h5>
+                    <p class="card-text service_info" >Some quick example text to build on the card...</p>
+                    <p class="bloc_left_price">4tr450  VND</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT781Uxl7bAyv7xKJ7zGNmVTWwkbctVI8g_IA&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info"><a href="/client/detailCate" title="View Product">Product title</a></h4>
+                            <p class="card-text service_info">Some quick example text to build on the card title....</p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">10tr500  VND </p>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhcFvmNdg3h6khVKhiYgFkd7vB6McNgx0CuA&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info"><a href="/client/detailCate" title="View Product">Điều hòa</a></h4>
+                            <p class="card-text service_info">Some quick example text to build on the card title....</p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">15tr650  VND </p>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMjHyGllgfgRKXw4wecAJuHITFc1FmT9D-Cw&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info"><a href="/client/detailCate" title="View Product">Quạt hơi nước</a></h4>
+                            <p class="card-text service_info">Some quick example text to build on the card title....</p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">8tr785  VND </p>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5d_tChbIG8QcjlfAD6mMhuQSF-GVFjMUUPw&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info"><a href="/client/detailCate" title="View Product">Tủ lạnh</a></h4>
+                            <p class="card-text service_info">Some quick example text to build on the card title....</p>
+            
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">10tr500  VND </p>
+                                </div>
+                                <div class="col">
+                                    <a href="cart.html" class="btn btn-success btn-block">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4zXxm78O18xLL9VCWE5diApRLqgL__-WOag&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info"><a href="/client/detailCate" title="View Product">Máy giặt</a></h4>
+                            <p class="card-text service_info">Some quick example text to build on the card title....</p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">15tr770  VND </p>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRW8swJfDADJcv8BC_Azw0tAA3YxeP1gkFJw&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info"><a href="/client/detailCate" title="View Product">Máy lọc nước</a></h4>
+                            <p class="card-text service_info">Some quick example text to build on the card title....</p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">16tr700  VND </p>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

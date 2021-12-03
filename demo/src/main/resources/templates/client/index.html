@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel='shortcut icon' href='./img/tn2.png' />>
+    <title>Điện lạnh Thành Nam</title>
+    <link th:href="@{//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/client/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/client/css/style.css}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/client/css/single_styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/client/css/single_responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/client/css/responsive.css}">
+    <link th:href="@{/client/css/fonts_googleapis.css}" rel="stylesheet" type="text/css">
+</head> 
+<body>
+
+<nav th:replace="client/menu :: header"></nav>
+
+    <div class="container" style="margin-top: 10px;">
+        <div class="row">
+            <div class="col">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="https://kiendienlanh.com/image/data/slide-3.jpg"
+                                alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://kiendienlanh.com/image/data/nhan-day-nghe-2.png"
+                                alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://kiendienlanh.com/image/data/mua-ban-do-cu.jpg"
+                                alt="Third slide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="card">
+                    <div class="card-header bg-success text-white text-uppercase">
+                        Thông tin về chúng tôi
+                    </div>
+                    <ul class="infor_list">
+                        <li>Dịch vụ sửa chửa</li>
+                        <li>Mua bán sản phẩm củ</li>
+                        <li>Bảo hành</li>
+                        <li>Cung cấp linh kiện chính hảng</li>
+                        <li>0912.345.675</li>
+                        <li>Hỗ trở lắp đạt tai chỗ</li>
+                        <li>Đặt lịch sửa chữa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3 mb-4">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="service_info_  card-header text-white text-uppercase">
+                        Thông tin về công ty chúng tôi
+                    </div>
+                    <p class="text_p">
+                        Kính thưa Quý khách hàng ! <br>
+
+                        Công ty TNHH Cơ Điện Lạnh Phước Long Thịnh ( tiền thân là công Ty TNHH PHƯỚC LONG THỊNH ) là đại
+                        lý phân phối máy lạnh chính hãng của những nhà sản xuất nổi tiếng hiện nay như :
+
+                        DAIKIN , Panasonic , TOSHIBA , LG , SAMSSUNG , hitachi , Reetech .....<br>
+
+                        Sản phẩm bán ra đều được bảo hành chính hãng theo tiêu chuẩn của nhà sản xuất (kèm theo
+                        phiếu bảo hành).
+
+                        Các dòng máy công ty chúng tôi cung cấp : Máy lạnh treo tường , máy lạnh âm trần , máy lạnh
+                        giấu trần , máy lạnh tủ đứng , máy lạnh áp trần ... tốt nhất và giá rẻ.<br>
+
+                        Ngoài ra, Công ty nhận thi công lắp đặt máy lạnh nhà ở, bệnh viện, trường học, các chung cư
+                        cao tầng, ngân hàng, khách sạn vv...trên toàn quốc với giá rẻ nhất - bảo hành dài hạn.
+                        Đội ngũ nhân viên kỹ thuật được đào tạo lành nghề, chuyên nghiệp giàu kinh nghiệm, tận tâm, đầy
+                        nhiệt huyết, phục vụ hết mình...<br>
+
+                        Chúng tôi sẽ phục vụ tận nơi (giao hàng tận nhà), lắp đặt hoàn chỉnh theo ý kiến của quý khách.
+                        Ngoài ra, Công ty chúng tôi còn nhận tư vấn , thiết kế ,lắp đặt , bảo trì , sủa chữa cho các hệ
+                        thống máy lạnh (Dân dụng, Thương mại, Công nghiệp,...)<br>
+
+                        Sử dụng Hệ thống Điều hòa không khí của điện lạnh Phước Long Thịnh , Quý khách sẽ tận hưởng được
+                        sự tươi mát của bầu không khí trong lành, sự sảng khoái, thoải mái về mặt tinh thần, góp phần
+                        tạo sự phấn khởi, hăng hái trong công việc.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="categories ">
+        <div class="container mt-3 mb-4">
+            <div class="service_info_ card-header  text-white text-uppercase">
+                Thông tin dịch vụ sửa chửa của chúng tôi
+            </div>
+            <div class="col-sm">
+                <div class="card" style="border: none;">
+
+                    <div class="card-body"></div>
+                    <div class="row">
+                        <div class="categories__slider owl-carousel">
+                            <div class="col-lg-25">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <div class=" service_info card-header bg-success text-white text-uppercase">
+                                            Sữa máy giặt
+                                        </div>
+                                        <img class="img-fluid border-0"
+                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text home-product-item__name">Some quick example text to
+                                                build on the card title and make up the bulk of the card's content.</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
+                                                        >></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-25">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <div class=" service_info card-header bg-success text-white text-uppercase">
+                                            Sữa máy giặt
+                                        </div>
+                                        <img class="img-fluid border-0"
+                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text home-product-item__name">Some quick example text to
+                                                build on the card title and make up the bulk of the card's content.</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
+                                                        >></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-25">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <div class=" service_info card-header bg-success text-white text-uppercase">
+                                            Sữa máy giặt
+                                        </div>
+                                        <img class="img-fluid border-0"
+                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text home-product-item__name">Some quick example text to
+                                                build on the card title and make up the bulk of the card's content.</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
+                                                        >></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ccol-lg-25">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <div class=" service_info card-header bg-success text-white text-uppercase">
+                                            Sữa máy giặt
+                                        </div>
+                                        <img class="img-fluid border-0"
+                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text home-product-item__name">Some quick example text to
+                                                build on the card title and make up the bulk of the card's content.</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
+                                                        >></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-25">
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <div class=" service_info card-header bg-success text-white text-uppercase">
+                                            Sữa máy giặt
+                                        </div>
+                                        <img class="img-fluid border-0"
+                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text home-product-item__name">Some quick example text to
+                                                build on the card title and make up the bulk of the card's content.</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
+                                                        >></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+ <!-- Footer -->
+<div th:replace="client/menu :: footer"></div>  
+
+
+<div th:replace="client/menu :: tnContact"></div>  
+ 
+   <script th:src="@{/client/js/slim.min.js}" type="text/javascript"></script>
+  <script th:src="@{/client/js/jquery.min.js}" type="text/javascript"></script>
+  <script th:src="@{/client/js/popper.min.js}" type="text/javascript"></script>
+  <script th:src="@{/client/js/bootstrap.min.js}" type="text/javascript"></script>
+
+  <script th:src="@{/client/js/jquery-3.3.1.min.js}"></script>
+  <script th:src="@{/client/js/jquery-ui.min.js}"></script>
+  <script th:src="@{/client/js/jquery.slicknav.js}"></script>
+  <script th:src="@{/client/js/owl.carousel.min.js}"></script>
+  <script th:src="@{/client/js/main.js}"></script>
+</body>
+
+</html>
