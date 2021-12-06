@@ -23,6 +23,7 @@ th:fragment="area(view)">
   <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png" />
   <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />  
   <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="./ckeditor//ckeditor.js"></script>
   
 
 
@@ -128,7 +129,9 @@ th:fragment="area(view)">
      <div th:replace="${view}"></div>
      
   </div>
-
+  <script type="text/javascript" language="javascript">
+    CKEDITOR.replace('editer');
+  </script>
   <script src="./js/send-otp.js"></script>
   <script src="./js/delete.js"></script>
   <script src="./js/update-cate.js"></script>

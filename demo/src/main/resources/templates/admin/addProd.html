@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/admin/menu :: area(~{:: main})}">
+<head>
+
+</head>
+<body th:fragment="main">
+
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <div class="ms-auto text-end">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Library
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 style="text-align: center;" class="card-title">Thêm sản phẩm</h2>
+                            <div class="table-responsive">
+                                <form style="font-size: 15px;">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Tên sản phẩm</label>
+                                            <input placeholder="Tên sản phẩm" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Giá </label>
+                                            <input placeholder="Giá bán" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Số lượng</label>
+                                            <input placeholder="Email" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Loại sản phẩm</label>
+                                            <select class="form-select">
+                                                <option selected>Chọn loại sản phẩm</option>
+                                                <option value="1">Tủ lạnh</option>
+                                                <option value="2">Máy giặt</option>
+                                                <option value="3">Điều hào</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Hãng</label>
+                                            <select class="form-select">
+                                                <option selected>Chọn thương hiệu</option>
+                                                <option value="1">SAMSUNG</option>
+                                                <option value="2">PANASONIC</option>
+                                                <option value="3">DAIKIN</option>
+                                                <option value="3">ELECTROLUX</option>
+                                                <option value="3">LG</option>
+                                                <option value="3">AQUA</option>
+                                                <option value="3">TOSHIBA</option>
+                                                <option value="3">MITSUBISHI</option>
+                                                <option value="3">SANYO</option>
+                                                <option value="3">SHARP</option>
+                                                <option value="3">BEKO</option>
+                                                <option value="3">GREE</option>
+                                                <option value="3">CASPER</option>
+                                                <option value="3">MIDEA</option>
+                                                <option value="3">Khác</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="customFile1">Chọn ảnh 1</label>
+                                            <input type="file" class="form-control" id="customFile1" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="customFile2">Chọn ảnh 2</label>
+                                            <input type="file" class="form-control" id="customFile2" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="customFile3">Chọn ảnh 3</label>
+                                            <input type="file" class="form-control" id="customFile3" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Mô tả</label>
+                                            <textarea id="editer" placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-left: 20px;">
+                                        <a href="/admin/product"><input type="button" class="btn btn-primary" style="padding: 8px 50px;"  value="Trở lại"></a>
+                                        <a href=""><input type="submit" class="btn btn-success" style="padding:8px 50px;color: #fff;" value="Thêm sản phẩm"></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

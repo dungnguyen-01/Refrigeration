@@ -37,6 +37,25 @@ public class AdminController {
         return "admin/login";
     }
 
+    @RequestMapping("/admin/editProd")
+    public String editProd(){
+        return "/admin/editProd";
+    }
+    @RequestMapping("admin/addProd")
+    public String addProd(){
+        return "admin/addProd";
+    }
+
+    @RequestMapping("admin/editService")
+    public String editService(){
+        return "admin/editService";
+    }
+
+    @RequestMapping("admin/addService")
+    public String addService(){
+        return "admin/addService";
+    }
+
     @PostMapping("/admin/login")
     public String login(Model model, @RequestParam("email") String email,
                         @RequestParam("password") String password){

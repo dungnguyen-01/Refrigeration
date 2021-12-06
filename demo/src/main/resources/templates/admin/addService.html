@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/admin/menu :: area(~{:: main})}">
+<head>
+
+</head>
+<body th:fragment="main">
+
+
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Tables</h4>
+                    <div class="ms-auto text-end">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Library
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 style="text-align: center;" class="card-title">Thêm dịch vụ</h2>
+                            <div class="table-responsive">
+                                <form style="font-size: 15px;">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Tên dịch vụ</label>
+                                            <input placeholder="Tên sản phẩm" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="customFile">Chọn ảnh</label>
+                                            <input type="file" class="form-control" id="customFile" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Mô tả</label>
+                                            <textarea id="editer" class="form-control" ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-left: 20px;">
+                                        <a href=""><input type="button" class="btn btn-primary" style="padding: 8px 50px;"  value="Trở lại"></a>
+                                        <a href=""><input type="submit" class="btn btn-success" style="padding:8px 50px;color: #fff;" value="Thêm dịch vụ"></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

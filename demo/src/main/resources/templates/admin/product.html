@@ -30,28 +30,28 @@ th:replace="~{/admin/menu :: area(~{:: main})}">
               <div class="card-body">
                 <h2 style="text-align: center;" class="card-title">Danh sách sản phẩm</h2>
                 <div class="table-responsive">
-                  <a href="#buy" style="margin-bottom: 20px;margin-left: 30px;color: #fff;font-weight: 700;"
-                    class="btn btn-success" data-toggle="modal"><span>Thêm SP</span></a>
+                  <a href="/admin/addProd" style="margin-bottom: 20px;margin-left: 30px;color: #fff;font-weight: 700;"
+                    class="btn btn-success" ><span>Thêm SP</span></a>
                   <table id="zero_config" class="table table-striped table-bordered">
                     <thead>
                       <tr>
                         <th>STT</th>
                         <th>Tên SP</th>
                         <th>Loại SP</th>
+                        <th>Hiệu</th>
                         <th>Giá</th>
                         <th>Số lượng</th>
                         <th>Mô tả</th>
                         <th>Hình 1</th>
                         <th>Hình 2</th>
                         <th>Hình 3</th>
-                        <th>Hình 4</th>                      
                         <th>Trạng thái</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Tiger Nixon</td>
+                        <td>1</td>
                         <td>System Architect</td>
                         <td>Edinburgh</td>
                         <td>61</td>
@@ -63,149 +63,22 @@ th:replace="~{/admin/menu :: area(~{:: main})}">
                         <td>2011/04/25</td>
                         <td>$320,800</td>
                         <td>
-                          <a href="#" class="btn btn-danger" data-toggle="modal"><span>Xóa</span></a>
-                          <a href="#edit" class="btn btn-success" data-toggle="modal"><span>Sữa</span></a>
-                        
+                          <a href="#" class="btn btn-danger" ><span>Xóa</span></a>
+                          <a href="/admin/editProd" class="btn btn-success" ><span>Sữa</span></a>
                         </td>
                       </tr>
-                     
-                      
                   </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       
       </div>
-
       <footer class="footer text-center">
         All Rights Reserved by Matrix-admin. Designed and Developed by
         <a href="https://www.wrappixel.com">WrapPixel</a>.
       </footer>
     </div>
-  
-
-  <div id="buy" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form action="add" method="post">
-          <div class="modal-header">
-            <h4 class="modal-title">Thông tin sản phẩm</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label>Tên sản phẩm</label>
-              <input placeholder="Tên sản phẩm" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Giá </label>
-              <input placeholder="Giá bán" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Số lượng</label>
-              <input placeholder="Email" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Loại sản phẩm</label>
-              <select class="form-select">
-                <option selected>Choose...</option>
-                <option value="1">Tủ lạnh</option>
-                <option value="2">Máy giặt</option>
-                <option value="3">Điều hào</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 1</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 2</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 3</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 4</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label>Mô tả</label>
-              <textarea placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <input type="button" class="btn btn-danger" style="padding: 8px 30px;" data-dismiss="modal" value="Cancel">
-            <input type="submit" class="btn btn-success" style="padding:8px 30px;color: #fff;" value="Thêm">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  
-  <div id="edit" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form action="add" method="post">
-          <div class="modal-header">
-            <h4 class="modal-title">Sửa sản phẩm</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label>Tên sản phẩm</label>
-              <input placeholder="Tên sản phẩm" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Giá </label>
-              <input placeholder="Giá bán" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Số lượng</label>
-              <input placeholder="Email" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Loại sản phẩm</label>
-              <select class="form-select">
-                <option selected>Choose...</option>
-                <option value="1">Tủ lạnh</option>
-                <option value="2">Máy giặt</option>
-                <option value="3">Điều hào</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 1</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 2</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 3</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 4</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label>Mô tả</label>
-              <textarea placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <input type="button" class="btn btn-danger" style="padding: 8px 30px;" data-dismiss="modal" value="Cancel">
-            <input type="submit" class="btn btn-success" style="padding:8px 30px;color: #fff;" value="Sữa">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
  </body>
 </html>

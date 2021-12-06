@@ -18,6 +18,7 @@ public class Product {
     private String name;
     @Column(name = "cateId")
     private int cateId;
+    private String trademark;
     private double price;
     @Column(name = "imageId")
     private int imageId;
