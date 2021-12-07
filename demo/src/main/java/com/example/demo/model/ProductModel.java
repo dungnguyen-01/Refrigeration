@@ -11,23 +11,32 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Base64;
+import java.util.List;
 
 @Service
 public class ProductModel {
     @Autowired
     private ProductRepsitory productRepsitory;
 
-    public void addP(MultipartFile imageF,double price, String name,int cateId,int qty,String description){
+    public void addP(List<MultipartFile> imageF, double price, String name, int cateId, int qty, String description){
         Product p = new Product();
         p.setName(name);
         p.setCateId(cateId);
         p.setQty(qty);
         p.setPrice(price);
         p.setDescription(description);
-        String fileName= StringUtils.cleanPath(imageF.getOriginalFilename());
+        //String fileName= StringUtils.cleanPath(imageF.getOriginalFilename());
 
         try {
-            p.setImageF(Base64.getEncoder().encodeToString(imageF.getBytes()));
+            if(imageF.size()>0){
+                p.setImageF(Base64.getEncoder().encodeToString(imageF.get(0).getBytes()));
+                if(imageF.get(1)!= null){
+                    p.setImageS(Base64.getEncoder().encodeToString(imageF.get(1).getBytes()));
+                }
+                if(imageF.get(2)!= null){
+                    p.setImageT(Base64.getEncoder().encodeToString(imageF.get(2).getBytes()));
+                }
+            }
 
         } catch (IOException e) {
             e.printStackTrace();

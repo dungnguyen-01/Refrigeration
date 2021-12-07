@@ -26,8 +26,8 @@ public class ProductController {
 
     @PostMapping("/admin/add")
     //@ResponseBody
-    public String addProduct(@RequestParam("imageF") MultipartFile imageF, @RequestParam("price") double price,
-                                @RequestParam("name") String name,
+    public String addProduct(@RequestParam("imageF") List<MultipartFile> imageF, @RequestParam("price") double price,
+                             @RequestParam("name") String name,
                              @RequestParam("cateId") int cateId,
                              @RequestParam("qty") int qty,
                              @RequestParam("description") String description

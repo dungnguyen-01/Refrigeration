@@ -28,8 +28,7 @@ public class AdminController {
     private OtpModel otpModel;
     @Autowired
     private AdminRepsitory adminRepsitory;
-    @Autowired
-    HttpServletResponse response;
+
 
     @RequestMapping("admin/login")
     public String loginForm(){
