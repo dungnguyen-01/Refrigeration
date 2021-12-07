@@ -78,13 +78,13 @@ public class ProductController {
         product.setDescription(description);
         product.setName(name);
 
-        if(imageF.size()>0){
+        if(imageF.size()>0 && imageF.get(0).getSize()>0){
             try {
                 product.setImageF(Base64.getEncoder().encodeToString(imageF.get(0).getBytes()));
-                if(imageF.size()>1 && imageF.get(1)!= null){
+                if(imageF.size()>1 && imageF.get(1)!= null && imageF.get(1).getSize()>0){
                     product.setImageS(Base64.getEncoder().encodeToString(imageF.get(1).getBytes()));
                 }
-                if(imageF.size()>2 && imageF.get(2)!= null){
+                if(imageF.size()>2 && imageF.get(2)!= null && imageF.get(2).getSize()>0){
                     product.setImageT(Base64.getEncoder().encodeToString(imageF.get(2).getBytes()));
                 }
             } catch (IOException e) {
