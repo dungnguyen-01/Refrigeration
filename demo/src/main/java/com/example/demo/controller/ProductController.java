@@ -13,6 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 @Controller
@@ -61,6 +63,36 @@ public class ProductController {
         List<Category> listCategory = categoryRepsitory.findAll();
         model.addAttribute("listCategory",listCategory);
         return "/admin/editProd";
+    }
+
+    @PostMapping("/admin/updated")
+    public String editProduct(@RequestParam("imageF") List<MultipartFile> imageF, @RequestParam("price") double price,
+                              @RequestParam("name") String name,
+                              @RequestParam("cateId") int cateId,
+                              @RequestParam("qty") int qty, @RequestParam("id") int id,
+                              @RequestParam("description") String description){
+        Product product= productRepsitory.getById(id);
+        product.setCateId(cateId);
+        product.setPrice(price);
+        product.setQty(qty);
+        product.setDescription(description);
+        product.setName(name);
+
+        if(imageF.size()>0){
+            try {
+                product.setImageF(Base64.getEncoder().encodeToString(imageF.get(0).getBytes()));
+                if(imageF.size()>1 && imageF.get(1)!= null){
+                    product.setImageS(Base64.getEncoder().encodeToString(imageF.get(1).getBytes()));
+                }
+                if(imageF.size()>2 && imageF.get(2)!= null){
+                    product.setImageT(Base64.getEncoder().encodeToString(imageF.get(2).getBytes()));
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        productRepsitory.save(product);
+        return "redirect:/admin/product";
     }
 
 }

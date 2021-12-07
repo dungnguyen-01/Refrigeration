@@ -30,10 +30,10 @@ public class ProductModel {
         try {
             if(imageF.size()>0){
                 p.setImageF(Base64.getEncoder().encodeToString(imageF.get(0).getBytes()));
-                if(imageF.get(1)!= null){
+                if(imageF.size()>1 && imageF.get(1)!= null){
                     p.setImageS(Base64.getEncoder().encodeToString(imageF.get(1).getBytes()));
                 }
-                if(imageF.get(2)!= null){
+                if(imageF.size()>2 && imageF.get(2)!= null){
                     p.setImageT(Base64.getEncoder().encodeToString(imageF.get(2).getBytes()));
                 }
             }
