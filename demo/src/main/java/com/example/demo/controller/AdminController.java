@@ -37,10 +37,7 @@ public class AdminController {
         return "admin/login";
     }
 
-    @RequestMapping("/admin/editProd")
-    public String editProd(){
-        return "/admin/editProd";
-    }
+
     @RequestMapping("admin/addProd")
     public String addProd(){
         return "admin/addProd";

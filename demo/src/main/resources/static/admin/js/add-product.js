@@ -13,7 +13,8 @@ function addProduct(){
         "qty":qty,
         "cateId":cateId,
         "description":description,
-        "image":imageF
+        "imageF":imageF
+
     }
     fetch("/admin/add",{
         method: 'POST',

@@ -50,36 +50,30 @@ th:replace="~{/admin/menu :: area(~{:: main})}">
                       </tr>
                     </thead>
                     <tbody>
-                      <tr th:each="p, state : ${listProduct}">
-                        <td th:text="${state.count}">Tiger Nixon</td>
-                        <td th:text="${p.name}">System Architect</td>
-                        <td th:text="${p.cateId}">Edinburgh</td>
-                        <td th:text="${p.price}">61</td>
-                        <td th:text="${p.qty}">2011/04/25</td>
-                        <td th:text="${p.description}">$320,800</td>
-                        <td><img th:src="*{'data:image/jpeg;base64,'+{p.imageF}}"></td>
-                        <td th:text="${p.name}">Edinburgh</td>
-                        <td th:text="${p.name}">61</td>
-                        <!--<td th:text="${p.name}">2011/04/25</td>-->
-                        <td th:text="${p.status}">$320,800</td>
+                      <tr th:each="p, state : ${listProduct}" >
+                        <td th:text="${state.count}"></td>
+                        <td th:text="${p.name}"></td>
+                        <td th:text="${p.cateId }" ></td>
+                        <td th:text="${p.price}"></td>
+                        <td th:text="${p.qty}"></td>
+                        <td th:text="${p.description}"></td>
+                        <td><img style="width: 50px;height: 50px;" th:src="${'data:image/jpeg;base64,'+{p.imageF}}"></td>
+                        <td><img style="width: 50px;height: 50px;" th:src="${'data:image/jpeg;base64,'+{p.imageS}}"></td>
+                        <td><img style="width: 50px;height: 50px;" th:src="${'data:image/jpeg;base64,'+{p.imageT}}"></td>
+                        <td th:text="${p.status? 'Còn hàng':'Hết hàng'}"></td>
                         <td>
-                          <a href="#" class="btn btn-danger" data-toggle="modal"><span>Xóa</span></a>
-                          <a href="#edit" class="btn btn-success" data-toggle="modal"><span>Sữa</span></a>
-                        
+                          <a th:href="@{|/admin/delete/${p.id}|}" class="btn btn-danger" ><span>Xóa</span></a>
+                          <a th:href="@{|/admin/edit/${p.id}|}" class="btn btn-success" ><span>Sữa</span></a>
                         </td>
                       </tr>
-                     
-                      
                   </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       
       </div>
-
-      <footer class="footer text-center">
+     <footer class="footer text-center">
         All Rights Reserved by Matrix-admin. Designed and Developed by
         <a href="https://www.wrappixel.com">WrapPixel</a>.
       </footer>
@@ -110,31 +104,28 @@ th:replace="~{/admin/menu :: area(~{:: main})}">
             <div class="form-group">
               <label>Loại sản phẩm</label>
               <select id="cateId" name="cateId" class="form-select">
-                <option selected>Choose...</option>
-                <option value="1">Tủ lạnh</option>
-                <option value="2">Máy giặt</option>
-                <option value="3">Điều hào</option>
+                <option selected>Chọn loại sản phẩm</option>
+                <th:block th:each="item : ${listCategory}">
+                   <option th:text="${item.name}" th:value="${item.id}"></option>
+                </th:block>
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 1</label>
-              <input type="file" name="file" class="form-control" id="imageF" />
+              <label class="form-label" >Chọn ảnh 1</label>
+              <input type="file" name="imageF" class="form-control" id="imageF" />
             </div>
             <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 2</label>
-              <input type="file" class="form-control" id="imageS" />
+              <label class="form-label" >Chọn ảnh 2</label>
+              <input type="file" name="imageS" class="form-control" id="imageS" />
             </div>
             <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 3</label>
-              <input type="file" class="form-control" id="imageT" />
+              <label class="form-label" >Chọn ảnh 3</label>
+              <input type="file" name="imageT" class="form-control" id="imageT" />
             </div>
-            <!--<div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 4</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>-->
+
             <div class="form-group">
               <label>Mô tả</label>
-              <textarea id="description" placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
+              <textarea name="description" id="description" placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
             </div>
           </div>
           <div class="modal-footer">
@@ -146,66 +137,6 @@ th:replace="~{/admin/menu :: area(~{:: main})}">
     </div>
   </div>
 
-  
-  <div id="edit" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form action="add" method="post">
-          <div class="modal-header">
-            <h4 class="modal-title">Sửa sản phẩm</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label>Tên sản phẩm</label>
-              <input placeholder="Tên sản phẩm" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Giá </label>
-              <input placeholder="Giá bán" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Số lượng</label>
-              <input placeholder="Email" type="text" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label>Loại sản phẩm</label>
-              <select class="form-select">
-                <option selected>Choose...</option>
-                <option value="1">Tủ lạnh</option>
-                <option value="2">Máy giặt</option>
-                <option value="3">Điều hào</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 1</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 2</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 3</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="customFile">Chọn ảnh 4</label>
-              <input type="file" class="form-control" id="customFile" />
-            </div>
-            <div class="form-group">
-              <label>Mô tả</label>
-              <textarea placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <input type="button" class="btn btn-danger" style="padding: 8px 30px;" data-dismiss="modal" value="Cancel">
-            <input type="submit" class="btn btn-success" style="padding:8px 30px;color: #fff;" value="Sữa">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
  </body>
 </html>

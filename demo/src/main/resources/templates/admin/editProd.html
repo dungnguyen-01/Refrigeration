@@ -32,66 +32,66 @@
               <div class="card-body">
                 <h2 style="text-align: center;" class="card-title">Chỉnh sửa danh mục</h2>
                 <div class="table-responsive">                 
-                    <form style="font-size: 15px;">
+                    <form action="/admin/update" method="post" th:object="${product}" style="font-size: 15px;">
                           <div class="modal-body">
                             <div class="form-group">
                               <label>Tên sản phẩm</label>
-                              <input placeholder="Tên sản phẩm" type="text" class="form-control" required>
+                              <input th:field="*{name}" placeholder="Tên sản phẩm" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                               <label>Giá </label>
-                              <input placeholder="Giá bán" type="text" class="form-control" required>
+                              <input th:field="*{price}" placeholder="Giá bán" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                               <label>Số lượng</label>
-                              <input placeholder="Email" type="text" class="form-control" required>
+                              <input th:field="*{qty}" placeholder="Số lượng" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                               <label>Loại sản phẩm</label>
-                              <select class="form-select">
+                              <select id="cateId" name="cateId" class="form-select">
                                 <option selected>Chọn loại sản phẩm</option>
-                                <option value="1">Tủ lạnh</option>
-                                <option value="2">Máy giặt</option>
-                                <option value="3">Điều hào</option>
+                                <th:block th:each="item : ${listCategory}">
+                                  <option th:text="${item.name}" th:value="${item.id}"></option>
+                                </th:block>
                               </select>
                             </div>
-                            <div class="form-group">
-                              <label>Hãng</label>
-                              <select class="form-select">
-                                <option selected>Chọn thương hiệu</option>
-                                <option value="1">SAMSUNG</option>
-                                <option value="2">PANASONIC</option>
-                                <option value="3">DAIKIN</option>
-                                <option value="3">ELECTROLUX</option>
-                                <option value="3">LG</option>
-                                <option value="3">AQUA</option>
-                                <option value="3">TOSHIBA</option>
-                                <option value="3">MITSUBISHI</option>
-                                <option value="3">SANYO</option>
-                                <option value="3">SHARP</option>
-                                <option value="3">BEKO</option>
-                                <option value="3">GREE</option>
-                                <option value="3">CASPER</option>
-                                <option value="3">MIDEA</option>
-                                <option value="3">Khác</option>
-                              </select>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                              <label>Hãng</label>-->
+<!--                              <select class="form-select">-->
+<!--                                <option selected>Chọn thương hiệu</option>-->
+<!--                                <option value="1">SAMSUNG</option>-->
+<!--                                <option value="2">PANASONIC</option>-->
+<!--                                <option value="3">DAIKIN</option>-->
+<!--                                <option value="3">ELECTROLUX</option>-->
+<!--                                <option value="3">LG</option>-->
+<!--                                <option value="3">AQUA</option>-->
+<!--                                <option value="3">TOSHIBA</option>-->
+<!--                                <option value="3">MITSUBISHI</option>-->
+<!--                                <option value="3">SANYO</option>-->
+<!--                                <option value="3">SHARP</option>-->
+<!--                                <option value="3">BEKO</option>-->
+<!--                                <option value="3">GREE</option>-->
+<!--                                <option value="3">CASPER</option>-->
+<!--                                <option value="3">MIDEA</option>-->
+<!--                                <option value="3">Khác</option>-->
+<!--                              </select>-->
+<!--                            </div>-->
                             <div class="form-group">
                               <label class="form-label" for="customFile1">Chọn ảnh 1</label>
-                              <input type="file" class="form-control" id="customFile1" />
+                              <input type="file" th:field="*{imageF}" id="imageF" class="form-control" id="customFile1" />
                             </div>
                             <div class="form-group">
                               <label class="form-label" for="customFile2">Chọn ảnh 2</label>
-                              <input type="file" class="form-control" id="customFile2" />
+                              <input ype="file" th:field="*{imageS}" id="imageS" class="form-control" id="customFile2" />
                             </div>
                             <div class="form-group">
                               <label class="form-label" for="customFile3">Chọn ảnh 3</label>
-                              <input type="file" class="form-control" id="customFile3" />
+                              <input ype="file" th:field="*{imageT}" id="imageT" class="form-control" id="customFile3" />
                             </div>
 
                             <div class="form-group">
                               <label>Mô tả</label>
-                              <textarea id="editer" placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
+                              <textarea th:field="*{description}"  id="editer" placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
                             </div>
                           </div>
                           <div class="form-group" style="margin-left: 20px;">

@@ -17,13 +17,18 @@ public class ProductModel {
     @Autowired
     private ProductRepsitory productRepsitory;
 
-    public void addP(MultipartFile file, double price, String name){
+    public void addP(MultipartFile imageF,double price, String name,int cateId,int qty,String description){
         Product p = new Product();
         p.setName(name);
+        p.setCateId(cateId);
+        p.setQty(qty);
         p.setPrice(price);
-        String fileName= StringUtils.cleanPath(file.getOriginalFilename());
+        p.setDescription(description);
+        String fileName= StringUtils.cleanPath(imageF.getOriginalFilename());
+
         try {
-            p.setImageF(Base64.getEncoder().encodeToString(file.getBytes()));
+            p.setImageF(Base64.getEncoder().encodeToString(imageF.getBytes()));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,8 +42,8 @@ public class ProductModel {
             product.setCateId(body.getCategory());
             product.setDescription(body.getDescription());
             product.setPrice(body.getPrice());
-            product.setImage(body.getImage());
-            //product.setImageF(body.getImageF().getBytes());
+            product.setImageF(body.getImage());
+
             product.setQty(body.getQty());
 
             productRepsitory.save(product);

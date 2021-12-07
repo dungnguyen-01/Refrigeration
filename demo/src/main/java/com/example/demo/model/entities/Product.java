@@ -19,18 +19,18 @@ public class Product implements Serializable {
     private String name;
     @Column(name = "cate_id")
     private int cateId;
-    private String trademark;
     private double price;
     @Column(name = "image_f", columnDefinition = "MEDIUMBLOB")
     /*@Lob
     private byte[] imageF;*/
     private String imageF;
-    @Column(name = "image_s")
-    private Byte[] imageS;
-    @Column(name = "image_t")
-    private Byte[] imageT;
+    @Column(name = "image_s", columnDefinition = "MEDIUMBLOB")
+    private String imageS;
+    @Column(name = "image_t", columnDefinition = "MEDIUMBLOB")
+    private String imageT;
     private int qty;
     private String description;
     private boolean status;
-    private String image;
+
+
 }
