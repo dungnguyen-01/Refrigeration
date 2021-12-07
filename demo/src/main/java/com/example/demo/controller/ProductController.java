@@ -56,7 +56,7 @@ public class ProductController {
     @RequestMapping("/admin/edit/{id}")
     public String editPro(Model model,@PathVariable("id")Integer id) {
         Product product = productRepsitory.getById(id);
-        model.addAttribute("product",product);
+        model.addAttribute("form",product);
 
         List<Category> listCategory = categoryRepsitory.findAll();
         model.addAttribute("listCategory",listCategory);
