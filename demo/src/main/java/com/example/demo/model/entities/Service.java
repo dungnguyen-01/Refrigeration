@@ -17,6 +17,7 @@ public class Service {
     @Id
     private int id;
     private String name;
+    @Column(columnDefinition = "LONGBLOB")
     private String image;
     private String description;
 

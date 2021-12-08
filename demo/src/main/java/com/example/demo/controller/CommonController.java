@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.entities.Product;
+import com.example.demo.model.entities.Service;
 import com.example.demo.repository.OrderRepsitory;
 import com.example.demo.repository.AdminRepsitory;
 import com.example.demo.repository.ProductRepsitory;
+import com.example.demo.repository.ServiceRepsitory;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,8 @@ public class CommonController {
     private AdminRepsitory userd;
     @Autowired
     private ProductRepsitory productRepsitory;
+    @Autowired
+    private ServiceRepsitory serviceRepsitory;
 
     @RequestMapping("/admin/index")
     public String  index() {
@@ -30,7 +34,9 @@ public class CommonController {
 
 
     @RequestMapping("/admin/service")
-    public String  adminSer() {
+    public String adminSer(Model model) {
+        List<Service> list = serviceRepsitory.findAll();
+        model.addAttribute("list",list);
         return "/admin/service";
     }
 

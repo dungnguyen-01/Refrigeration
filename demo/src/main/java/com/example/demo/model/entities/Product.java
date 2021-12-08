@@ -20,13 +20,13 @@ public class Product implements Serializable {
     @Column(name = "cate_id")
     private int cateId;
     private double price;
-    @Column(name = "image_f", columnDefinition = "MEDIUMBLOB")
+    @Column(name = "image_f", columnDefinition = "LONGBLOB")
     /*@Lob
     private byte[] imageF;*/
     private String imageF;
-    @Column(name = "image_s", columnDefinition = "MEDIUMBLOB")
+    @Column(name = "image_s", columnDefinition = "LONGBLOB")
     private String imageS;
-    @Column(name = "image_t", columnDefinition = "MEDIUMBLOB")
+    @Column(name = "image_t", columnDefinition = "LONGBLOB")
     private String imageT;
     private int qty;
     private String description;
