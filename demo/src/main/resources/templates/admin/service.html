@@ -50,7 +50,7 @@
                         <td th:text="${i.description}">$320,800</td>
                         <td>
                           <a href="#" class="btn btn-danger" data-toggle="modal"><span>Xóa</span></a>
-                          <a href="/admin/editService" class="btn btn-success" ><span>Sữa</span></a>
+                          <a th:href="@{|/admin/editService/${i.id}|}" class="btn btn-success" ><span>Sữa</span></a>
                         
                         </td>
                       </tr>                                         

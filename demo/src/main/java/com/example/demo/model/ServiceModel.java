@@ -24,4 +24,16 @@ public class ServiceModel {
         service.setName(name);
         serviceRepsitory.save(service);
     }
+
+    public void editService(MultipartFile image, String name, String des, Integer id){
+        com.example.demo.model.entities.Service service = serviceRepsitory.getById(id);
+        service.setDescription(des);
+        try {
+            service.setImage(Base64.getEncoder().encodeToString(image.getBytes()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        service.setName(name);
+        serviceRepsitory.save(service);
+    }
 }
