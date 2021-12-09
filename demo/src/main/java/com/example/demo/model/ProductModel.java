@@ -18,10 +18,11 @@ public class ProductModel {
     @Autowired
     private ProductRepsitory productRepsitory;
 
-    public void addP(List<MultipartFile> imageF, double price, String name, int cateId, int qty, String description){
+    public void addP(List<MultipartFile> imageF, double price, String name,String manufacturer,int cateId,int qty,String description){
         Product p = new Product();
         p.setName(name);
         p.setCateId(cateId);
+        p.setManufacturer(manufacturer);
         p.setQty(qty);
         p.setPrice(price);
         p.setDescription(description);
@@ -49,6 +50,7 @@ public class ProductModel {
             Product product = new Product();
             product.setName(body.getName());
             product.setCateId(body.getCategory());
+            product.setManufacturer(body.getManufacturer());
             product.setDescription(body.getDescription());
             product.setPrice(body.getPrice());
             product.setImageF(body.getImage());

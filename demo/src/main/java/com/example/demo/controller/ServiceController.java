@@ -22,12 +22,17 @@ public class ServiceController {
     @Autowired
     private ServiceRepsitory serviceRepsitory;
 
+    @RequestMapping("admin/addService")
+    public String addService(){
+        return "admin/addService";
+    }
+
     @PostMapping(value = "/addService")
     public String addService(@RequestParam("imageF") MultipartFile imageF,
                              @RequestParam("description") String description,
                              @RequestParam("name") String name){
         serviceModel.addService(imageF, name, description);
-        return "admin/service";
+        return "redirect:/admin/service";
     }
 
     @RequestMapping("/editService/{id}")
@@ -42,6 +47,12 @@ public class ServiceController {
                               @RequestParam("description") String description,
                               @RequestParam("name") String name, @RequestParam Integer id){
         serviceModel.editService(imageF,name,description, id);
+        return "redirect:/admin/service";
+    }
+
+    @RequestMapping("/deleteService/{id}")
+    public String deleteService(@PathVariable("id")Integer id){
+        serviceRepsitory.deleteById(id);
         return "redirect:/admin/service";
     }
 }

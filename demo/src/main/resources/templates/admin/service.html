@@ -47,11 +47,10 @@
                         <td th:text="${state.count}">S1</td>
                         <td th:text="${i.name}">Edinburgh</td>
                         <td><img style="width: 50px;height: 50px;" th:src="${'data:image/jpeg;base64,'+{i.image}}"></td>
-                        <td th:text="${i.description}">$320,800</td>
+                        <td th:utext="${i.description}">$320,800</td>
                         <td>
-                          <a href="#" class="btn btn-danger" data-toggle="modal"><span>Xóa</span></a>
+                          <a th:href="@{|/admin/deleteService/${i.id}|}" class="btn btn-danger"><span>Xóa</span></a>
                           <a th:href="@{|/admin/editService/${i.id}|}" class="btn btn-success" ><span>Sữa</span></a>
-                        
                         </td>
                       </tr>                                         
                   </table>

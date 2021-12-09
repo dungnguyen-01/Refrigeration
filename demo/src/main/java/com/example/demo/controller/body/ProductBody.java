@@ -9,6 +9,7 @@ import java.io.Serializable;
 public class ProductBody implements Serializable {
     private String image;
     private String name;
+    private String manufacturer;
     private double price;
     private int qty;
     private String description;
@@ -17,4 +18,5 @@ public class ProductBody implements Serializable {
     //private MultipartFile imageF;
     private byte[] imageS;
     private byte[] imageT;
+    private byte[] imageF;
 }

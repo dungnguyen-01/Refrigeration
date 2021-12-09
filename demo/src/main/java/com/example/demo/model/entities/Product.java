@@ -19,6 +19,8 @@ public class Product implements Serializable {
     private String name;
     @Column(name = "cate_id")
     private int cateId;
+
+    private String manufacturer;
     private double price;
     @Column(name = "image_f", columnDefinition = "LONGBLOB")
     /*@Lob

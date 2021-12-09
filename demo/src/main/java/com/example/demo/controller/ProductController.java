@@ -26,24 +26,30 @@ public class ProductController {
     @Autowired
     private CategoryRepsitory categoryRepsitory;
 
+    @RequestMapping("/admin/addProd")
+    //@ResponseBody
+    public String addProductForm(Model model){
+        List<Category> listCategory = categoryRepsitory.findAll();
+        model.addAttribute("listCategory",listCategory);
+
+        return "/admin/addProd";
+    }
+
     @PostMapping("/admin/add")
     //@ResponseBody
     public String addProduct(@RequestParam("imageF") List<MultipartFile> imageF, @RequestParam("price") double price,
                              @RequestParam("name") String name,
+                             @RequestParam("manufacturer") String manufacturer,
                              @RequestParam("cateId") int cateId,
                              @RequestParam("qty") int qty,
-                             @RequestParam("description") String description
-                             ){
+                             @RequestParam("description") String description){
 
-        productModel.addP(imageF, price, name,cateId,qty,description);
+        productModel.addP(imageF,price,name,manufacturer,qty,cateId,description);
         return "redirect:/admin/product";
     }
 
     @RequestMapping("/admin/product")
     public String adminPro(Model model) {
-        List<Category> listCategory = categoryRepsitory.findAll();
-        model.addAttribute("listCategory",listCategory);
-
         List<Product> products = productRepsitory.findAll();
         model.addAttribute("listProduct",products);
         return "/admin/product";
@@ -69,11 +75,13 @@ public class ProductController {
     public String editProduct(@RequestParam("imageF") List<MultipartFile> imageF, @RequestParam("price") double price,
                               @RequestParam("name") String name,
                               @RequestParam("cateId") int cateId,
+                              @RequestParam("manufacturer") String manufacturer,
                               @RequestParam("qty") int qty, @RequestParam("id") int id,
                               @RequestParam("description") String description){
         Product product= productRepsitory.getById(id);
         product.setCateId(cateId);
         product.setPrice(price);
+        product.setManufacturer(manufacturer);
         product.setQty(qty);
         product.setDescription(description);
         product.setName(name);

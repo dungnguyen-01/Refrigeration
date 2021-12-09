@@ -4,6 +4,7 @@ function addProduct(){
     var price = document.getElementById("price").value;
     var qty = document.getElementById("qty").value;
     var cateId =document.getElementById("cateId").value;
+    var manufacturer =document.getElementById("manufacturer").value;
     var description = document.getElementById("description").value;
     var imageF = document.getElementById("imageF").value;
 
@@ -12,6 +13,7 @@ function addProduct(){
         "price" : price,
         "qty":qty,
         "cateId":cateId,
+        "manufacturer":manufacturer,
         "description":description,
         "imageF":imageF
 
