@@ -17,8 +17,6 @@ public class Product implements Serializable {
     @Id
     private int id;
     private String name;
-    @Column(name = "cate_id")
-    private int cateId;
 
     private String manufacturer;
     private double price;
@@ -33,6 +31,10 @@ public class Product implements Serializable {
     private int qty;
     private String description;
     private boolean status;
+
+    @ManyToOne()
+    @JoinColumn(name = "cate_id")
+    Category category;
 
 
 }

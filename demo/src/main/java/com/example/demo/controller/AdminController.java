@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.controller.body.AdminBody;
 import com.example.demo.model.AdminModel;
 import com.example.demo.model.OtpModel;
@@ -19,6 +20,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
 
 @Controller
 public class AdminController {
@@ -56,6 +58,7 @@ public class AdminController {
     public String requestForget(){
         return "admin/authen";
     }
+
 
     @ResponseBody
     @PostMapping("admin/sendOtp")

@@ -3,16 +3,17 @@
 th:fragment="area(view)">
 
 <head th:fragment="head">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel='shortcut icon' href='./img/tn2.png' />>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='shortcut icon' href='./img/tn2.png' />
     <title>Điện lạnh Thành Nam</title>
-    <link th:href="@{//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/client/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/client/css/style.css}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" th:href="@{/client/css/single_styles.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/client/css/single_responsive.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/client/css/responsive.css}">
-    <link th:href="@{/client/css/fonts_googleapis.css}" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/client/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/client/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/client/css/single_styles.css">
+    <link rel="stylesheet" type="text/css" href="/client/css/single_responsive.css">
+    <link rel="stylesheet" type="text/css" href="/client/css/responsive.css">
+    <link href="/client/css/fonts_googleapis.css" rel="stylesheet" type="text/css">
 </head> 
 <body>
 
@@ -28,30 +29,18 @@ th:fragment="area(view)">
                     <a class="nav-link header_font"  href="/client/index">Trang chủ </a>
                 </li>
                 <li class="nav-item  head">
-                    <a class="nav-link header_font" href="/client/category">Mua bán </a>
+                    <a class="nav-link header_font" href="/client/product">Sản phẩm mới</a>
                 </li>
                 <li class="nav-item  head">
-                    <a class="nav-link header_font" href="/client/product" >Sữa chữa</a>
+                    <a class="nav-link header_font" href="/client/categoryOld">Sản phẩm củ</a>
+                </li>
+                <li class="nav-item  head">
+                    <a class="nav-link header_font" href="/client/service" >Sữa chữa</a>
                 </li>
                 <li class="nav-item  head">
                     <a class="nav-link header_font" href="/client/contact">Liên hệ</a>
                 </li>
             </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-secondary btn-number">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-                <a class="btn btn-success btn-sm ml-3" href="/client/cart">
-                    <i class="fa fa-shopping-cart"></i> Cart
-                    <span class="badge badge-light">3</span>
-                </a>
-            </form>
         </div>
     </div>
 </nav>
@@ -100,8 +89,8 @@ th:fragment="area(view)">
                     <hr class="bg-white">
                     <ul  style="color:rgb(0, 255, 221);">
                         <li><a href="index.html">Trang chủ</a></li>
-                        <li><a href="category.html">Mua bán</a></li>
-                        <li><a href="product.html">Sữa chữa</a></li>
+                        <li><a href="product.html">Mua bán</a></li>
+                        <li><a href="service.html">Sữa chữa</a></li>
                         <li><a href="contact.html">Liên hệ</a></li>
                     </ul>
                 </div>
@@ -152,16 +141,19 @@ th:fragment="area(view)">
   </ul>
 
 
-  <script th:src="@{/client/js/slim.min.js}" type="text/javascript"></script>
-  <script th:src="@{/client/js/jquery.min.js}" type="text/javascript"></script>
-  <script th:src="@{/client/js/popper.min.js}" type="text/javascript"></script>
-  <script th:src="@{/client/js/bootstrap.min.js}" type="text/javascript"></script>
+  <script src="/client/js/slim.min.js" type="text/javascript"></script>
+  <script src="/client/js/jquery.min.js" type="text/javascript"></script>
+  <script src="/client/js/popper.min.js" type="text/javascript"></script>
+  <script src="/client/js/bootstrap.min.js" type="text/javascript"></script>
 
-  <script src="js/single_custom.js"></script>
-  <script th:src="@{/client/js/jquery-3.3.1.min.js}"></script>
-  <script th:src="@{/client/js/jquery-ui.min.js}"></script>
-  <script th:src="@{/client/js/jquery.slicknav.js}"></script>
-  <script th:src="@{/client/js/owl.carousel.min.js}"></script>
-  <script th:src="@{/client/js/main.js}"></script>
+
+  <script src="/client/js/single_custom.js"></script>
+
+  <script src="/client/js/jquery-3.3.1.min.js"></script>
+  <script src="/client/js/jquery-ui.min.js"></script>
+  <script src="/client/js/jquery.slicknav.js"></script>
+  <script src="/client/js/owl.carousel.min.js"></script>
+  <script src="/client/js/main.js"></script>
+
 </body>
 </html>

@@ -1,16 +1,13 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.entities.Product;
 import com.example.demo.model.entities.Service;
 import com.example.demo.repository.OrderRepsitory;
 import com.example.demo.repository.AdminRepsitory;
 import com.example.demo.repository.ProductRepsitory;
 import com.example.demo.repository.ServiceRepsitory;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -50,20 +47,25 @@ public class CommonController {
         return "client/index";
     }
 
-    @RequestMapping("client/product")
-    public String  product() {
-        return "client/product";
+    @RequestMapping("client/categoryOld")
+    public String  cateOld() {
+        return "client/categoryOld";
     }
+
+//    @RequestMapping("client/product")
+//    public String  product() {
+//        return "client/product";
+//    }
 
     @RequestMapping("client/cart")
     public String  cart() {
         return "client/cart";
     }
 
-    @RequestMapping("client/category")
-    public String  category() {
-        return "client/category";
-    }
+//    @RequestMapping("client/category")
+//    public String  category() {
+//        return "product";
+//    }
 
     @RequestMapping("client/contact")
     public String  contact() {
@@ -75,10 +77,7 @@ public class CommonController {
         return "client/detailService";
     }
 
-    @RequestMapping("client/detailCate")
-    public String  detailCate() {
-        return "client/detailCate";
-    }
+
 
 
 

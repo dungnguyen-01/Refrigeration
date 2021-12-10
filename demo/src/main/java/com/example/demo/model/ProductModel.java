@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.example.demo.controller.body.ProductBody;
+import com.example.demo.model.entities.Category;
 import com.example.demo.model.entities.Product;
 import com.example.demo.repository.CategoryRepsitory;
 import com.example.demo.repository.ProductRepsitory;
@@ -18,10 +19,10 @@ public class ProductModel {
     @Autowired
     private ProductRepsitory productRepsitory;
 
-    public void addP(List<MultipartFile> imageF, double price, String name,String manufacturer,int cateId,int qty,String description){
+    public void addP(List<MultipartFile> imageF, double price, String name, String manufacturer, Category category, int qty, String description){
         Product p = new Product();
         p.setName(name);
-        p.setCateId(cateId);
+        p.setCategory(category);
         p.setManufacturer(manufacturer);
         p.setQty(qty);
         p.setPrice(price);
@@ -49,7 +50,7 @@ public class ProductModel {
         try {
             Product product = new Product();
             product.setName(body.getName());
-            product.setCateId(body.getCategory());
+            product.setCategory(body.getCategory());
             product.setManufacturer(body.getManufacturer());
             product.setDescription(body.getDescription());
             product.setPrice(body.getPrice());

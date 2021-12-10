@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/client/menu :: area(~{:: main})}">
+<body th:fragment="main">
+
+
+<div class="container" style="margin-bottom: 10px;">
+    <div class="row">
+        <div class="col-lg-8">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/client/index">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Sản phẩm củ</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-lg-4 search_col">
+            <form >
+                <div class="input-group" style="margin: auto;height: 47px;">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-success">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-3">
+            <div class="card bg-light mb-3">
+                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Loại sản phẩm</div>
+                <ul class="list-group category_block">
+                    <li class="list-group-item"><a href="product.html">Tủ lạnh</a></li>
+                    <li class="list-group-item"><a href="product.html">Máy giặt</a></li>
+                    <li class="list-group-item"><a href="product.html">Máy điều hòa</a></li>
+                    <li class="list-group-item"><a href="product.html">Máy nước nóng lạnh</a></li>
+                    <li class="list-group-item"><a href="product.html">Máy rửa chén</a></li>
+                    <li class="list-group-item"><a href="product.html">Máy lọc nước</a></li>
+                </ul>
+            </div>
+            <div class="card bg-light mb-3 noibat">
+                <div class="card-header bg-success text-white text-uppercase">Sản phẩm mới</div>
+                <div class="card-body">
+                    <img class="img-fluid img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OgOfJYlMEBYwR8Ng19Apx6gUArMupHx1Lg&usqp=CAU" />
+                    <h5 class="card-title service_info">Dieu hoa</h5>
+                    <p class="card-text service_info" >Some quick example text to build on the card...</p>
+                    <p class="bloc_left_price">4tr450  VND</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT781Uxl7bAyv7xKJ7zGNmVTWwkbctVI8g_IA&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info home-product-item__name_1"><a href="/client/detailCate" title="View Product">Tủ lạnh SANYO 250 LÍT</a></h4>
+                            <p class="card-text service_info home-product-item__name">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum corporis obcaecati minus fugiat nesciunt! Veritatis ducimus mollitia earum minus, illo ratione vitae consequatur sequi deleniti ullam amet dolores neque laudantium.</p>
+                            <p class="card-text"><small class="text-muted">Hãng: Samsung</small></p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">Giá bán: 10tr500  VND </p>
+                                    <a href="/client/detailCate" class="btn btn-primary ">Chi tiết >></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhcFvmNdg3h6khVKhiYgFkd7vB6McNgx0CuA&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info home-product-item__name_1"><a href="/client/detailCate" title="View Product">Điều hòa Inventer 1.5 ngua</a></h4>
+                            <p class="card-text service_info home-product-item__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis explicabo distinctio vel inventore sed. Vero sapiente illo id totam facilis dicta neque laboriosam, voluptate quasi. Excepturi voluptatum ipsa cum ad.</p>
+                            <p class="card-text"><small class="text-muted">Hãng: Samsung</small></p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">Giá bán: 15tr650  VND </p>
+                                    <a href="/client/detailCate" class="btn btn-primary ">Chi tiết >></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT781Uxl7bAyv7xKJ7zGNmVTWwkbctVI8g_IA&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info home-product-item__name_1"><a href="/client/detailCate" title="View Product">Tủ lạnh SANYO 250 LÍT</a></h4>
+                            <p class="card-text service_info home-product-item__name">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum corporis obcaecati minus fugiat nesciunt! Veritatis ducimus mollitia earum minus, illo ratione vitae consequatur sequi deleniti ullam amet dolores neque laudantium.</p>
+                            <p class="card-text"><small class="text-muted">Hãng: Samsung</small></p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">Giá bán: 10tr500  VND </p>
+                                    <a href="/client/detailCate" class="btn btn-primary ">Chi tiết >></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 mb-3">
+                    <div class="card">
+                        <img class="card-img-top img_infor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhcFvmNdg3h6khVKhiYgFkd7vB6McNgx0CuA&usqp=CAU" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title service_info home-product-item__name_1"><a href="/client/detailCate" title="View Product">Điều hòa Inventer 1.5 ngua</a></h4>
+                            <p class="card-text service_info home-product-item__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis explicabo distinctio vel inventore sed. Vero sapiente illo id totam facilis dicta neque laboriosam, voluptate quasi. Excepturi voluptatum ipsa cum ad.</p>
+                            <p class="card-text"><small class="text-muted">Hãng: Samsung</small></p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="btn btn-danger btn-block">Giá bán: 15tr650  VND </p>
+                                    <a href="/client/detailCate" class="btn btn-primary ">Chi tiết >></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

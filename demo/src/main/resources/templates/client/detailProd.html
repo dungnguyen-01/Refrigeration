@@ -7,7 +7,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/client/index">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="/client/category">Mua bán</a></li>
+                        <li class="breadcrumb-item"><a href="/client/detailProd">Mua bán</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
                     </ol>
                 </nav>
@@ -24,24 +24,25 @@
                </li>
            </ul>
        </div>
-       <div class="row">
+       <div class="row" th:object="${product}">
            <div class="col-lg-7">
                <div class="single_product_pics">
                    <div class="row">
                        <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
                            <div class="single_product_thumbnails">
                                <ul>
-                                   <li><img src="img/single_1_thumb.jpg" alt="" data-image="img/single_1.jpg"></li>
-                                   <li class="active"><img src="img/single_2_thumb.jpg" alt=""
-                                                           data-image="img/single_2.jpg"></li>
-                                   <li><img src="img/single_3_thumb.jpg" alt="" data-image="img/single_3.jpg"></li>
+                                   <li class="active"><img th:src="*{'data:image/jpeg;base64,'+{imageF}}" alt="" th:data-image="*{'data:image/jpeg;base64,'+{imageF}}"></li>
+                                   <li> <img th:src="*{'data:image/jpeg;base64,'+{imageS}}" alt="" th:data-image="*{'data:image/jpeg;base64,'+{imageS}}"></li>
+
+                                   <li><img th:src="*{'data:image/jpeg;base64,'+{imageT}}" alt="" th:data-image="*{'data:image/jpeg;base64,'+{imageT}}"></li>
                                </ul>
                            </div>
                        </div>
                        <div class="col-lg-9 image_col order-lg-2 order-1">
                            <div class="single_product_image">
                                <div class="single_product_image_background"
-                                    style="background-image:url(img/single_2.jpg)"></div>
+                                    style="background: url{[[@{|/client/img/fb2.png|}]]}">
+                               </div>
                            </div>
                        </div>
                    </div>
@@ -50,31 +51,21 @@
            <div class="col-lg-5">
                <div class="product_details">
                    <div class="product_details_title">
-                       <h2 style="color: darkblue;">MÁY LẠNH ELECTROLUX INVERTER1.5 NGỰA</h2>
-                       <div class="product_price">Giá bán: 8tr800k</div>
-                       <p class="card-text"><small class="text-muted">Hãng: Samsung</small></p>
+                       <h2 style="color: darkblue;">[(*{name})]</h2>
+                       <div class="product_price" >Giá bán: [(*{#numbers.formatDecimal(price, 0, 'POINT',0,'POINT')})] VNĐ</div>
+                       <p class="card-text"><small class="text-muted">Hãng: [(*{manufacturer})]</small></p>
                    </div>
                    <div class="free_delivery d-flex flex-row align-items-center bg-success justify-content-center">
                        <span class="ti-truck"></span><h4 style="color: #fff;">Giao hàng tận tơi</h4>
                    </div>
-                   <br>
-                   - Giao hàng miễn phí HCM <br>
-                   - Bảo hành 6 tháng tận nơi <br>
-                   - Lỗi đổi mới sản phẩm trong 10 & 35 ngày<br>
-                   - Thu lại sản phẩm nếu khách hàng không sử dụng nữa<br>
-                   - Giao hàng cho khách mua online<br>
-                   - Máy zin chưa sữa chữa<br>
-                   Điện Máy Bá Tuấn:<br>
-                   0938079687 (zalo)<br>
-                   Đc:17A Trần Bình Trọng - F5- Bình Thạnh HCM<br>
-                   Giờ làm việc: thứ 2- chủ nhật (9h-18h)<br>
+                   <div th:utext="*{description}"> </div>
                </div>
            </div>
            <div class="col">
                <div class="col-lg-6" style="line-height: 40px;font-size: 18px;color: beige;float: left;background-color: rgb(206, 21, 21);"><i class="fa fa-phone"></i><a style="color: beige;" href="tel: 092377232"> Gọi ngay: 092377232</a></div>
                <div class="col-lg-6" style="line-height: 40px;font-size: 18px;color: beige;float: right;background-color: rgb(150, 234, 240);">
-                   <a style="float: left; color: midnightblue;font-weight: 700;" href=""><img style="height: 30px;width: 30px;"  src="img/icon_zalomessage.png" alt=""> Zalo</a>
-                   <a style="float: right;color: midnightblue;font-weight: 700;" href=""><img style="height: 30px;width: 30px;" src="img/fb2.png" alt=""> Facebook</a>
+                   <a style="float: left; color: midnightblue;font-weight: 700;" href=""><img style="height: 30px;width: 30px;"  src="/client/img/icon_zalomessage.png" alt=""> Zalo</a>
+                   <a style="float: right;color: midnightblue;font-weight: 700;" href=""><img style="height: 30px;width: 30px;" src="/client/img/fb2.png" alt=""> Facebook</a>
                </div>
            </div>
        </div>

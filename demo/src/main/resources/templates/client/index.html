@@ -2,16 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:fragment="head">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel='shortcut icon' href='./img/tn2.png' />>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='shortcut icon' href='./img/tn2.png' />
     <title>Điện lạnh Thành Nam</title>
-    <link th:href="@{//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/client/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/client/css/style.css}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" th:href="@{/client/css/single_styles.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/client/css/single_responsive.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/client/css/responsive.css}">
-    <link th:href="@{/client/css/fonts_googleapis.css}" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/client/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/client/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/client/css/single_styles.css">
+    <link rel="stylesheet" type="text/css" href="/client/css/single_responsive.css">
+    <link rel="stylesheet" type="text/css" href="/client/css/responsive.css">
+    <link href="/client/css/fonts_googleapis.css" rel="stylesheet" type="text/css">
 </head> 
 <body>
 
@@ -234,18 +235,21 @@
 <div th:replace="client/menu :: footer"></div>  
 
 
-<div th:replace="client/menu :: tnContact"></div>  
- 
-  <script th:src="@{/client/js/slim.min.js}" type="text/javascript"></script>
-  <script th:src="@{/client/js/jquery.min.js}" type="text/javascript"></script>
-  <script th:src="@{/client/js/popper.min.js}" type="text/javascript"></script>
-  <script th:src="@{/client/js/bootstrap.min.js}" type="text/javascript"></script>
+<div th:replace="client/menu :: tnContact"></div>
 
-  <script th:src="@{/client/js/jquery-3.3.1.min.js}"></script>
-  <script th:src="@{/client/js/jquery-ui.min.js}"></script>
-  <script th:src="@{/client/js/jquery.slicknav.js}"></script>
-  <script th:src="@{/client/js/owl.carousel.min.js}"></script>
-  <script th:src="@{/client/js/main.js}"></script>
+<script src="/client/js/slim.min.js" type="text/javascript"></script>
+<script src="/client/js/jquery.min.js" type="text/javascript"></script>
+<script src="/client/js/popper.min.js" type="text/javascript"></script>
+<script src="/client/js/bootstrap.min.js" type="text/javascript"></script>
+
+
+<script src="/client/js/single_custom.js"></script>
+
+<script src="/client/js/jquery-3.3.1.min.js"></script>
+<script src="/client/js/jquery-ui.min.js"></script>
+<script src="/client/js/jquery.slicknav.js"></script>
+<script src="/client/js/owl.carousel.min.js"></script>
+<script src="/client/js/main.js"></script>
 </body>
 
 </html>

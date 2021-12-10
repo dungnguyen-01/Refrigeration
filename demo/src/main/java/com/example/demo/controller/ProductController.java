@@ -1,12 +1,10 @@
 package com.example.demo.controller;
 
-import com.example.demo.controller.body.ProductBody;
 import com.example.demo.model.ProductModel;
 import com.example.demo.model.entities.Category;
 import com.example.demo.model.entities.Product;
 import com.example.demo.repository.CategoryRepsitory;
 import com.example.demo.repository.ProductRepsitory;
-import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,11 +38,11 @@ public class ProductController {
     public String addProduct(@RequestParam("imageF") List<MultipartFile> imageF, @RequestParam("price") double price,
                              @RequestParam("name") String name,
                              @RequestParam("manufacturer") String manufacturer,
-                             @RequestParam("cateId") int cateId,
+                             @RequestParam("category") Category category,
                              @RequestParam("qty") int qty,
                              @RequestParam("description") String description){
 
-        productModel.addP(imageF,price,name,manufacturer,qty,cateId,description);
+        productModel.addP(imageF,price,name,manufacturer,category,qty,description);
         return "redirect:/admin/product";
     }
 
@@ -74,12 +72,12 @@ public class ProductController {
     @PostMapping("/admin/updated")
     public String editProduct(@RequestParam("imageF") List<MultipartFile> imageF, @RequestParam("price") double price,
                               @RequestParam("name") String name,
-                              @RequestParam("cateId") int cateId,
+                              @RequestParam("category") Category category,
                               @RequestParam("manufacturer") String manufacturer,
                               @RequestParam("qty") int qty, @RequestParam("id") int id,
                               @RequestParam("description") String description){
         Product product= productRepsitory.getById(id);
-        product.setCateId(cateId);
+        product.setCategory(category);
         product.setPrice(price);
         product.setManufacturer(manufacturer);
         product.setQty(qty);

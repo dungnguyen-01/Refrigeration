@@ -10,10 +10,10 @@ import java.util.List;
 
 public interface ProductRepsitory extends JpaRepository<Product,Integer> {
 
-    @Query(value="SELECT p.name, p.manufacturer,p.price, p.qty, p.description,p.imageF,p.imageS ,p.imageT ,p.status , c.name" +
-            " FROM Product p" +
-            " INNER JOIN Category c " +
-            "ON p.cateId = c.id")
-    List<ProductBody> findJoin();
+//    @Query(value="SELECT p.name, p.manufacturer,p.price, p.qty, p.description,p.imageF,p.imageS ,p.imageT ,p.status , c.name" +
+//            " FROM Product p" +
+//            " INNER JOIN Category c " +
+//            "ON p.cateId = c.id")
+//    List<ProductBody> findJoin();
 
 }
