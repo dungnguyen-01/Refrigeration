@@ -39,15 +39,12 @@ th:replace="~{/admin/menu :: area(~{:: main})}">
                         <th>Tên SP</th>
                         <th>Loại</th>
                         <th>Hãng</th>
-                        <th>Giá</th>
                         <th>Số lượng</th>
-                        <th>Mô tả</th>
-                        <th>Hình1</th>
-                        <th>Hình2</th>
-                        <th>Hình3</th>
-                        <!--<th>Hình 4</th> -->
-                        <th>Trạng thái</th>
+                        <th>Giá</th>
+                        <th>Hình</th>
+                        <th>Loại hàng</th>
                         <th>Action</th>
+
                       </tr>
                     </thead>
                     <tbody>
@@ -56,13 +53,11 @@ th:replace="~{/admin/menu :: area(~{:: main})}">
                         <td th:text="${p.name}"></td>
                         <td th:text="${p.category.name}" ></td>
                         <td th:text="${p.manufacturer}" ></td>
-                        <td th:text="${p.price}"></td>
                         <td th:text="${p.qty}"></td>
-                        <td th:utext="${p.description}"></td>
+                        <td th:text="${p.price}"></td>
                         <td><img style="width: 50px;height: 50px;" th:src="${'data:image/jpeg;base64,'+{p.imageF}}"></td>
-                        <td><img style="width: 50px;height: 50px;" th:src="${'data:image/jpeg;base64,'+{p.imageS}}"></td>
-                        <td><img style="width: 50px;height: 50px;" th:src="${'data:image/jpeg;base64,'+{p.imageT}}"></td>
-                        <td th:text="${p.status? 'Còn hàng':'Hết hàng'}"></td>
+                        <td style="font-size: 20px;color: red;text-align: center" th:text="${p.productType}?'SP mới':'SP cũ'"></td>
+
                         <td>
                           <a th:href="@{|/admin/delete/${p.id}|}" class="btn btn-danger" ><span>Xóa</span></a>
                           <a th:href="@{|/admin/edit/${p.id}|}" class="btn btn-success" ><span>Sữa</span></a>

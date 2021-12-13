@@ -3,8 +3,7 @@
       th:replace="~{/admin/menu :: area(~{:: main})}">
 <body th:fragment="main">
 
-  <div  id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
-    data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
     <div class="page-wrapper">
       <div class="page-breadcrumb">
         <div class="row">
@@ -45,9 +44,18 @@
                         <label>Số lượng</label>
                         <input th:field="*{qty}" name="qty" placeholder="Nhập số lượng" type="text" class="form-control" required>
                       </div>
+                      <div class="form-check form-group">
+                        <label>Loại hàng</label>
+                        <br>
+                        <div class=" form-check-inline mt-3">
+                          <label style="margin-right: 25px;"><input th:field="*{productType}" value="0" type="radio" style="height: 18px; width: 18px;"> Sản phẩm củ</label>
+                          <label><input value="1"  th:field="*{productType}" type="radio" style="height: 18px; width: 18px;"> Sản phẩm mới</label>
+                        </div>
+                      </div>
                       <div class="form-group">
                         <label>Loại sản phẩm</label>
-                        <select th:required="true"  id="category" name="category" class="form-select">
+                        <select th:required="true"  id="category" name="category" class="form-select" style="font-size: 16px;color: #022424;background-color: rgba(241,241,139,0.75)">
+                          <option th:text="*{category.name}" th:value="*{category.id}"></option>
                           <th:block th:each="item : ${listCategory}">
                             <option th:text="${item.name}" th:value="${item.id}"></option>
                           </th:block>
@@ -55,7 +63,8 @@
                       </div>
                       <div class="form-group">
                         <label>Hãng</label>
-                        <select id="manufacturer" name="manufacturer" placeholder="Chọn thương hiệu" class="form-select">
+                        <select id="manufacturer" name="manufacturer" placeholder="Chọn thương hiệu" class="form-select" style="font-size: 16px;color: #022424;background-color: rgba(241,241,139,0.75)">
+                          <option th:text="*{manufacturer}" th:value="*{manufacturer}"></option>
                           <option value="SAMSUNG">SAMSUNG</option>
                           <option value="PANASONIC">PANASONIC</option>
                           <option value="PANASONIC">PANASONIC</option>
@@ -75,15 +84,15 @@
                       </div>
                       <div class="form-group">
                         <label class="form-label" for="customFile1">Chọn ảnh 1</label>
-                        <input  name="imageF" type="file" class="form-control" id="customFile1" />
+                        <input th:field="*{imageF}"  name="imageF" type="file" class="form-control" id="customFile1" />
                       </div>
                       <div class="form-group">
                         <label class="form-label" for="customFile2">Chọn ảnh 2</label>
-                        <input name="imageF" type="file" class="form-control" id="customFile2" />
+                        <input th:field="*{imageF}" name="imageF" type="file" class="form-control" id="customFile2" />
                       </div>
                       <div class="form-group">
                         <label class="form-label" for="customFile3">Chọn ảnh 3</label>
-                        <input name="imageF" type="file" class="form-control" id="customFile3" />
+                        <input th:field="*{imageF}" name="imageF" placeholder="hinh.png" type="file" class="form-control" id="customFile3" />
                       </div>
 
                       <div class="form-group">
@@ -103,8 +112,10 @@
         </div>
       </div>
     </div>
-  </div>
+
 
 
 </body>
 </html>
+
+

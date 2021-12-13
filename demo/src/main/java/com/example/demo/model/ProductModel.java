@@ -19,13 +19,14 @@ public class ProductModel {
     @Autowired
     private ProductRepsitory productRepsitory;
 
-    public void addP(List<MultipartFile> imageF, double price, String name, String manufacturer, Category category, int qty, String description){
+    public void addP(List<MultipartFile> imageF, double price,int productType, String name, String manufacturer, Category category, int qty, String description){
         Product p = new Product();
         p.setName(name);
         p.setCategory(category);
         p.setManufacturer(manufacturer);
         p.setQty(qty);
         p.setPrice(price);
+        p.setProductType(productType);
         p.setDescription(description);
         //String fileName= StringUtils.cleanPath(imageF.getOriginalFilename());
 
@@ -54,10 +55,9 @@ public class ProductModel {
             product.setManufacturer(body.getManufacturer());
             product.setDescription(body.getDescription());
             product.setPrice(body.getPrice());
+            product.setProductType(body.getProductType());
             product.setImageF(body.getImage());
-
             product.setQty(body.getQty());
-
             productRepsitory.save(product);
             return "Thêm sản phẩm thành công";
         } catch (Exception e){

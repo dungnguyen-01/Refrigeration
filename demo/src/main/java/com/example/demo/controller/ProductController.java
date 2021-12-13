@@ -5,6 +5,8 @@ import com.example.demo.model.entities.Category;
 import com.example.demo.model.entities.Product;
 import com.example.demo.repository.CategoryRepsitory;
 import com.example.demo.repository.ProductRepsitory;
+import net.minidev.json.JSONObject;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,9 +42,11 @@ public class ProductController {
                              @RequestParam("manufacturer") String manufacturer,
                              @RequestParam("category") Category category,
                              @RequestParam("qty") int qty,
+                             @RequestParam("productType") int productType,
                              @RequestParam("description") String description){
 
-        productModel.addP(imageF,price,name,manufacturer,category,qty,description);
+
+        productModel.addP(imageF,price,productType,name,manufacturer,category,qty,description);
         return "redirect:/admin/product";
     }
 
@@ -100,5 +104,6 @@ public class ProductController {
         productRepsitory.save(product);
         return "redirect:/admin/product";
     }
+
 
 }

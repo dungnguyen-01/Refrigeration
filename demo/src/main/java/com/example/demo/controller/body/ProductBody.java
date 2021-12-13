@@ -13,11 +13,11 @@ public class ProductBody implements Serializable {
     private String manufacturer;
     private double price;
     private int qty;
+    private int productType;
     private String description;
-    private int status;
     private Category category;
-    //private MultipartFile imageF;
     private byte[] imageS;
     private byte[] imageT;
     private byte[] imageF;
+
 }

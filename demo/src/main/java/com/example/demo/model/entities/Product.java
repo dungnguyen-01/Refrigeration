@@ -30,7 +30,8 @@ public class Product implements Serializable {
     private String imageT;
     private int qty;
     private String description;
-    private boolean status;
+    @Column(name = "product_type")
+    private int productType;
 
     @ManyToOne()
     @JoinColumn(name = "cate_id")

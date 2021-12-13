@@ -32,14 +32,9 @@
         <div class="row">
             <div class="col-12 col-lg-3">
                 <div class="card bg-light mb-3">
-                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Loại sản phẩm</div>
-                    <ul class="list-group category_block">
-                        <li class="list-group-item"><a href="product.html">Tủ lạnh</a></li>
-                        <li class="list-group-item"><a href="product.html">Máy giặt</a></li>
-                        <li class="list-group-item"><a href="product.html">Máy điều hòa</a></li>
-                        <li class="list-group-item"><a href="product.html">Máy nước nóng lạnh</a></li>
-                        <li class="list-group-item"><a href="product.html">Máy rửa chén</a></li>
-                        <li class="list-group-item"><a href="product.html">Máy lọc nước</a></li>
+                    <div style="background-color: #975400" class="card-header text-white text-uppercase"><i class="fa fa-list"></i> Loại sản phẩm</div>
+                    <ul class="list-group category_block" th:each="c : ${listCategory}" th:object="${c}">
+                        <li class="list-group-item category-item_link"><a class="text_a" href="product.html">[(*{name})]</a></li>
                     </ul>
                 </div>
                 <div class="card bg-light mb-3 noibat">
@@ -55,40 +50,45 @@
             <div class="col">
                 <div class="row">
                     <th:block th:each="p : ${listProduct}" th:object="${p}">
-                    <div class="col-12 col-md-6 col-lg-6 mb-3">
-                        <div class="card">
+                    <div class="col-12 col-md-6 col-lg-6 mb-3"  >
+                        <div class="card animation_card" >
                             <img th:src="*{'data:image/jpeg;base64,'+{imageF}}" class="card-img-top img_infor" alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title service_info home-product-item__name_1"><a href="/client/detailCate" th:text="*{name}" title="View Product"></a></h4>
-                                <div class="home-product-item__name">
-                                <p th:utext="*{description}" class="card-text service_info"></p>
-                            </div>
                                 <p class="card-text"><small class="text-muted" >Hãng: [(*{manufacturer})]</small></p>
+
                                 <div class="row">
                                     <div class="col">
                                          </p> <p class="btn btn-danger btn-block" >Giá bán: [(*{#numbers.formatDecimal(price, 0, 'POINT',0,'POINT')})] VNĐ</p></p>
                                         <a th:href="@{|/client/detailProd/*{id}|}" class="btn btn-primary ">Chi tiết >></a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                     </th:block>
 
-                    <div class="col-12">
-                        <nav aria-label="...">
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    <div class="col-12 mt-2 mb-5">
+                        <nav aria-label="Pagination" th:if="${listProduct.totalPages gt 0}">
+                            <ul class="pagination justify-content-center font-weight-bold">
+                                <li class="page-item " th:classappend="${listProduct.number eq 0} ? 'disabled'">
+                                    <a class="page-link"
+                                       th:href="@{/client/product?page={id}(id=${listProduct.number lt 2 ? 1 : listProduct.number})}"
+                                       aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+                                        <span aria-hidden="true">Previous</span>
+                                    </a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                <li class="page-item " th:classappend="${i eq listProduct.number + 1} ? 'active'"
+                                    th:each="i : ${#numbers.sequence( 1, listProduct.totalPages, 1)}">
+                                    <a class="page-link" th:href="@{/client/product?page={id}(id=${i})}" th:text="${i}"
+                                       th:title="${'Page '+ i}" data-toggle="tooltip"></a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
+                                <li class="page-item " th:classappend="${listProduct.number + 1 eq listProduct.totalPages} ? 'disabled'">
+                                    <a class="page-link"
+                                       th:href="@{/client/product?page={id}(id=${listProduct.number + 2})}"
+                                       aria-label="Next" title="Next Page" data-toggle="tooltip">
+                                        <span aria-hidden="true">Next</span>
+                                    </a>
                                 </li>
                             </ul>
                         </nav>

@@ -6,8 +6,7 @@
 </head>
 <body th:fragment="main">
 
-<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
-     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
     <div class="page-wrapper">
         <div class="page-breadcrumb">
             <div class="row">
@@ -44,11 +43,19 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Số lượng</label>
-                                            <input id="qty" name="qty" placeholder="Nhấp số lượng" type="text" class="form-control" required>
+                                            <input id="qty" name="qty" placeholder="Nhập số lượng" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="form-check form-group">
+                                            <label>Loại hàng</label>
+                                            <br>
+                                            <div class=" form-check-inline mt-3">
+                                                <label style="margin-right: 25px;"><input value="0" name="productType" type="radio"  checked style = "height: 18px; width: 18px;"> Sản phẩm củ</label>
+                                                <label><input value="1"  name="productType" type="radio" style = "height: 18px; width: 18px;"> Sản phẩm mới</label>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Loại sản phẩm</label>
-                                            <select id="category" name="category" class="form-select">
+                                            <select id="category" name="category" class="form-select" style="font-size: 16px;color: #022424;background-color: rgba(241,241,139,0.75)">
                                                 <option selected>Chọn loại sản phẩm</option>
                                                 <th:block th:each="item : ${listCategory}">
                                                     <option th:text="${item.name}" th:value="${item.id}"></option>
@@ -57,7 +64,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Hãng</label>
-                                            <select id="manufacturer" name="manufacturer" placeholder="Chọn thương hiệu" class="form-select">
+                                            <select id="manufacturer" name="manufacturer"  placeholder="Chọn thương hiệu" class="form-select" style="font-size: 16px;color: #022424;background-color: rgba(241,241,139,0.75)">
                                                 <option value="SAMSUNG">SAMSUNG</option>
                                                 <option value="PANASONIC">PANASONIC</option>
                                                 <option value="PANASONIC">PANASONIC</option>
@@ -105,7 +112,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 
 </body>

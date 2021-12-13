@@ -49,33 +49,24 @@ public class CommonController {
 
     @RequestMapping("client/categoryOld")
     public String  cateOld() {
-        return "client/categoryOld";
+        return "productOld";
     }
 
-//    @RequestMapping("client/product")
-//    public String  product() {
-//        return "client/product";
-//    }
+
 
     @RequestMapping("client/cart")
     public String  cart() {
         return "client/cart";
     }
 
-//    @RequestMapping("client/category")
-//    public String  category() {
-//        return "product";
-//    }
+
 
     @RequestMapping("client/contact")
     public String  contact() {
         return "client/contact";
     }
 
-    @RequestMapping("client/detailService")
-    public String  detailService() {
-        return "client/detailService";
-    }
+
 
 
 

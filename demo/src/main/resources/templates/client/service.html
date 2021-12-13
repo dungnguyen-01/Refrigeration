@@ -2,8 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{/client/menu :: area(~{:: main})}">
 <body th:fragment="main">
 
-/client/detailService
-
 <div class="container">
         <div class="row">
             <div class="col">
@@ -16,20 +14,13 @@
             </div>
         </div>
     </div>
-
-<div class="container">
+<div class="container mb-5">
     <div class="row">
         <div class="col-12 col-lg-3">
             <div class="card bg-light mb-3">
-                <div class="card-header bg-primary text-white text-uppercase">DỊCH VỤ NỔI BẬT</div>
-                <ul class="list-group category_block">
-                    <li class="list-group-item"><a href="product.html">BẢO TRÌ MÁY LẠNH</a></li>
-                    <li class="list-group-item"><a href="product.html">LẮP ĐẶT MÁY LẠNH</a></li>
-                    <li class="list-group-item"><a href="product.html">BƠM GAS MÁY LẠNH</a></li>
-                    <li class="list-group-item"><a href="product.html">SỬA LÒ VI SÓNG</a></li>
-                    <li class="list-group-item"><a href="product.html">SỬA TỦ LẠNH</a></li>
-                    <li class="list-group-item"><a href="product.html">SỬA MÁY GIẶT</a></li>
-                    <li class="list-group-item"><a href="product.html">SỬA MÁY NƯỚC NÓNG</a></li>
+                <div style="background-color: #975400" class="card-header bg-primary text-white text-uppercase">DỊCH VỤ NỔI BẬT</div>
+                <ul class="list-group category_block" th:each="s: ${listService}" th:object="${s}">
+                    <li class="list-group-item category-item_link"><a class="text_a" th:href="@{|/client/detailService/*{id}|}">[(*{name})]</a></li>
                 </ul>
             </div>
             <div class="card bg-light mb-3 noibat">
@@ -43,110 +34,27 @@
             </div>
         </div>
         <div class="col">
-            <div class="card mb-3" >
+            <div class="card mb-3 animation_card" th:each="c: ${listService}" th:object="${c}">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OgOfJYlMEBYwR8Ng19Apx6gUArMupHx1Lg&usqp=CAU" class="img-fluid rounded-start" alt="...">
+                        <img th:src="*{'data:image/jpeg;base64,'+{image}}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h3 class="card-title">Sữa chữa máy nóng lạnh</h3>
-                            <p class="card-text home-product-item__name">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam culpa voluptatum aliquid dignissimos ut, debitis ab minima, incidunt architecto magnam corrupti! Quidem impedit ex eius recusandae tenetur expedita culpa qui!
-                            </p>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="/client/detailService" class="btn btn-primary ">Chi tiết
-                                        >></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3" >
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OgOfJYlMEBYwR8Ng19Apx6gUArMupHx1Lg&usqp=CAU" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h3 class="card-title">Sữa chữa máy nóng lạnh</h3>
-                            <p class="card-text home-product-item__name">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam culpa voluptatum aliquid dignissimos ut, debitis ab minima, incidunt architecto magnam corrupti! Quidem impedit ex eius recusandae tenetur expedita culpa qui!
-                            </p>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="/client/detailService" class="btn btn-primary ">Chi tiết
-                                        >></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3" >
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OgOfJYlMEBYwR8Ng19Apx6gUArMupHx1Lg&usqp=CAU" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h3 class="card-title">Sữa chữa máy nóng lạnh</h3>
-                            <p class="card-text home-product-item__name">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam culpa voluptatum aliquid dignissimos ut, debitis ab minima, incidunt architecto magnam corrupti! Quidem impedit ex eius recusandae tenetur expedita culpa qui!
-                            </p>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="/client/detailService" class="btn btn-primary ">Chi tiết
-                                        >></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3" >
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OgOfJYlMEBYwR8Ng19Apx6gUArMupHx1Lg&usqp=CAU" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h3 class="card-title">Sữa chữa máy nóng lạnh</h3>
-                            <p class="card-text home-product-item__name">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam culpa voluptatum aliquid dignissimos ut, debitis ab minima, incidunt architecto magnam corrupti! Quidem impedit ex eius recusandae tenetur expedita culpa qui!
-                            </p>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="/client/detailService" class="btn btn-primary ">Chi tiết
-                                        >></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <h3  style="color: #902b2b;font-weight: 700;font-size: 35px" class="card-title" th:text="*{name}"></h3>
 
-            <div class="col-12 mt-5">
-                <nav aria-label="...">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                            <div th:utext="*{description}" style="margin: 0;padding: 0;font-size: 14px" class="card-text home-product-item__name_2" > </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <a th:href="@{|/client/detailService/*{id}|}" class="btn btn-primary">Chi tiết
+                                        >></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
         </div>
 
     </div>

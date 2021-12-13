@@ -3,9 +3,46 @@
 ** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
 */
 
+body{
+    background-color: #d6d6c2;
+}
+
+
+.text_a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.category-item_link{
+    transition: right linear 0.1s ;
+    right: 0;
+
+}
+
+.category-item_link:hover{
+    right: -2px;
+}
+
+.animation_card{
+    transition: tranform linear 0.1s;
+    will-change: tranform ;
+    box-shadow: rgba(15, 15, 15, 0.15) 0px 15px 25px, rgba(194, 111, 197, 0.05) 0px 5px 10px;
+}
+
+.animation_card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 1px 20px rgba(14, 11, 11, 0.05);
+}
+.li_list:hover{
+    background-color: #3b3b1f;
+}
+.img-fluid{
+    width: 100%;
+}
+
 .carousel_img{
     padding: 10px 150px;
-    background-color: rgb(221, 204, 204);
+    background-color:#b2b266;
 }
 .bloc_left_price {
     color: #c01508;
@@ -14,7 +51,7 @@
     font-size: 150%;
 }
 .category_block li:hover {
-    background-color: #007bff;
+    background-color: #9e9e9e;
 }
 .category_block li:hover a {
     color: #ffffff;
@@ -80,8 +117,7 @@ footer a {
     color: #ffffff ;
 }
 .img-fluid,.img_infor{
-    height: 200px;
-    margin-top: 5px
+    height: 220px;
 }
 
 .service_info{
@@ -103,14 +139,24 @@ footer a {
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.8rem;
-    color: var(--text-color);
     margin: 10px 10px 6px;
     height: 3.6rem;
     overflow: hidden;
     display: block;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;    
+    -webkit-line-clamp: 2;
+}
+.home-product-item__name_2{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    height: 4.9rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 /* about */
 .text_p{
@@ -195,7 +241,7 @@ footer a {
   .call-fix.label:before{  border-left-color: #dc0a0a!important}
  
 
-  .categories{
+.categories{
       width: 100%;
   }
 .categories__item {

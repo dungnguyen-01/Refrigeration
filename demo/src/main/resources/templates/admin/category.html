@@ -44,8 +44,8 @@
                         <td th:text="${state.count}"></td>
                         <td th:text="${item.name}"></td>
                         <td>
-<!--                          <button th:id="${item.id}" onclick="deleteCate()">Delete cate</button>-->
-                          <a th:href="@{|/category/delete/${item.id}|}"  class="btn btn-danger" >Xóa</a>
+                          <button th:id="${item.id}" onclick="deleteCate()">Delete cate</button>
+                          <a th:href="@{|/admin/category/delete/${item.id}|}" class="btn btn-danger" >Xóa</a>
                           <a th:id="${item.id}" onclick="updateCate(this)" class="btn btn-success" data-toggle="modal"><span>Sữa SP</span></a>
 
                         </td>

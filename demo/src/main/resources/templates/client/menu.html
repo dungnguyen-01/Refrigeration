@@ -5,7 +5,7 @@ th:fragment="area(view)">
 <head th:fragment="head">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel='shortcut icon' href='./img/tn2.png' />
+    <link rel='shortcut icon' href='/client/img/tn2.png' />
     <title>Điện lạnh Thành Nam</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="/client/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -14,7 +14,8 @@ th:fragment="area(view)">
     <link rel="stylesheet" type="text/css" href="/client/css/single_responsive.css">
     <link rel="stylesheet" type="text/css" href="/client/css/responsive.css">
     <link href="/client/css/fonts_googleapis.css" rel="stylesheet" type="text/css">
-</head> 
+</head>
+
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" th:fragment="header">
@@ -32,7 +33,7 @@ th:fragment="area(view)">
                     <a class="nav-link header_font" href="/client/product">Sản phẩm mới</a>
                 </li>
                 <li class="nav-item  head">
-                    <a class="nav-link header_font" href="/client/categoryOld">Sản phẩm củ</a>
+                    <a class="nav-link header_font" href="/client/productOld">Sản phẩm củ</a>
                 </li>
                 <li class="nav-item  head">
                     <a class="nav-link header_font" href="/client/service" >Sữa chữa</a>
@@ -115,25 +116,25 @@ th:fragment="area(view)">
 
 <ul id="tnContact" th:fragment="tnContact">
     <li>
-      <a href="https://messenger.com/t/dichvusuamaylanh.net" class="iconfb" target="_blanl">
+      <a href="https://www.facebook.com/%C4%90i%E1%BB%87n-l%E1%BA%A1nh-Th%C3%A0nh-Nam-102028988324495/" class="iconfb" target="_blanl">
         <i class="fa fa-facebook"></i>
       </a>
       <span class="label fb-fix" >Chat Facebook</span>
     </li>
     <li>
-      <a href="https://zalo.me/0382122624" class="iconzalo" target="_blanl">
+      <a href="https://zalo.me/0903758676" class="iconzalo" target="_blanl">
         <img src="https://dichvusuamaylanh.net/templates/images/icon_zalomessage.png" alt="">
       </a>
       <span class="label zalo-fix">Nhắn tin zalo</span>
     </li>
     <li>
-      <a href="sms:0382122624" class="iconsms">
+      <a href="sms:0903758676" class="iconsms">
         <i class="fa fa-commenting-o"></i>
       </a>
       <span class="label sms-fix">Nhắn tin điện thoại</span>
     </li>
     <li>
-      <a href="tel:0382122624" class="iconcall">
+      <a href="tel:0903758676" class="iconcall">
         <i class="fa fa-phone"></i>
       </a>
       <span class="label call-fix">Gọi điện thoại</span>
@@ -154,6 +155,29 @@ th:fragment="area(view)">
   <script src="/client/js/jquery.slicknav.js"></script>
   <script src="/client/js/owl.carousel.min.js"></script>
   <script src="/client/js/main.js"></script>
+
+<script>
+    $('#myTabs a').click(function (e) {
+        e.preventDefault();
+
+        var url = $(this).attr("/client/index");
+        var href = '/client/index';
+        var pane = $(this);
+
+        $(href).load(url, function (result) {
+            pane.tab('/client/index');
+        });
+    });
+
+    // load first tab content
+    $('/client/index').load($('.nav-link.active').attr("/client/index"), function (result) { });
+    $('/client/product').load($('.nav-link.active').attr("data-url"), function (result) { });
+    $('/client/productOld').load($('.nav-link.active').attr("/client/product"), function (result) { });
+    $('/client/service').load($('.nav-link.active').attr("/client/service"), function (result) { });
+    $('/client/contact').load($('.nav-link.active').attr("/client/contact"), function (result) { });
+</script>
+
+
 
 </body>
 </html>
