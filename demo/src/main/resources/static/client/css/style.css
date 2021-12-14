@@ -4,7 +4,82 @@
 */
 
 body{
-    background-color: #d6d6c2;
+    background-color: #f3f3ea;
+}
+
+.service-icon {
+    text-align: center;
+    height: 240px;
+}
+
+.service-icon img {
+    display: inline-block;
+    width: 100%;
+    height: 240px;
+    vertical-align: middle;
+    padding-top: 20px;
+}
+.services-subheading{
+    font-size: 20px;
+    margin: 35px 0 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: monospace;
+    color: rgb(90, 66, 4);
+}
+.service_list{
+    list-style: none;
+    font-family: cursive;
+}
+
+
+.hoverServices:hover {
+    background-color: #1a0303;
+}
+
+@media (min-width: 978px) {
+    .services-box {
+        margin-right: 0;
+        border: 1px solid #e5e5e5;
+        border-left: 0;
+        border-top: 0;
+        height: 500px;
+    }
+    .col-lg-10 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 83.333333%;
+        flex: 0 0 83.333333%;
+        max-width: 100%;
+
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+
+.waviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: 16px;
+    text-align: center;
+}
+.waviy span {
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    display: inline-block;
+    color: rgb(245, 244, 244);
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+
+}
+@keyframes waviy {
+    0%,40%,100% {
+        transform: translateY(0)
+    }
+    20% {
+        transform: translateY(-10px)
+    }
 }
 
 
@@ -104,10 +179,12 @@ footer a {
 .infor_list{
     list-style: none;
     text-align: center;
-    padding: 25px 0;
+    padding: 20px 5px;
     line-height: 30px;
-    background-color: #c01508;
-    color: white;
+    font-size: 18px;
+    background-color: #d6a02a;
+    color: rgb(248, 241, 242);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .service{

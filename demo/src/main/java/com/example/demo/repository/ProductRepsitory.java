@@ -1,11 +1,9 @@
 package com.example.demo.repository;
 
-import com.example.demo.controller.body.ProductBody;
 import com.example.demo.model.entities.Category;
 import com.example.demo.model.entities.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -39,6 +37,23 @@ public interface ProductRepsitory extends JpaRepository<Product,Integer> {
             "OR p.category.name LIKE %?1%" +
             "OR p.manufacturer LIKE %?1%")
     List<Product> findByKeyword(String name);
+
+    @Query("SELECT SUM (p.qty) FROM Product p WHERE p.productType = 1")
+     Integer findByCountProductTypeNew();
+    @Query("SELECT SUM (p.qty *p.price) FROM Product p WHERE p.productType = 1")
+    Integer findByCountProductTypeNewTotal();
+
+    @Query("SELECT SUM (p.qty) FROM Product p WHERE p.productType = 0")
+    Integer findByCountProductTypeOld();
+    @Query("SELECT SUM (p.qty *p.price) FROM Product p WHERE p.productType = 0")
+    Integer findByCountProductTypeOldTotal();
+
+    @Query("SELECT SUM (p.qty) FROM Product p ")
+    Integer findByCountProductType();
+
+    @Query("SELECT SUM (p.qty *p.price) FROM Product p ")
+    Integer findByCountProductTotal();
+
 
 
 }

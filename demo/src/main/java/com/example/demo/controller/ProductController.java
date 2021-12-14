@@ -5,8 +5,6 @@ import com.example.demo.model.entities.Category;
 import com.example.demo.model.entities.Product;
 import com.example.demo.repository.CategoryRepsitory;
 import com.example.demo.repository.ProductRepsitory;
-import net.minidev.json.JSONObject;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -103,6 +101,21 @@ public class ProductController {
         }
         productRepsitory.save(product);
         return "redirect:/admin/product";
+    }
+
+
+    @RequestMapping("/admin/index")
+    public  String index(Model model) {
+        model.addAttribute("countNew",productRepsitory.findByCountProductTypeNew());
+        model.addAttribute("countOld",productRepsitory.findByCountProductTypeOld());
+        model.addAttribute("countAll",productRepsitory.findByCountProductType());
+
+        model.addAttribute("totalNew",productRepsitory.findByCountProductTypeNewTotal());
+        model.addAttribute("totalOld",productRepsitory.findByCountProductTypeOldTotal());
+        model.addAttribute("total",productRepsitory.findByCountProductTotal());
+
+        return "/admin/index";
+
     }
 
 

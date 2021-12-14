@@ -24,10 +24,7 @@ public class CommonController {
     @Autowired
     private ServiceRepsitory serviceRepsitory;
 
-    @RequestMapping("/admin/index")
-    public String  index() {
-        return "/admin/index";
-    }
+
 
 
     @RequestMapping("/admin/service")

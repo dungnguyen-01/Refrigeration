@@ -4,7 +4,7 @@
 <head th:fragment="head">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel='shortcut icon' href='/client/img/tn2.png' />
+    <link rel='shortcut icon' type="image/png" href='/client/img/tn.png'/>
     <title>Điện lạnh Thành Nam</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="/client/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -44,20 +44,25 @@
                 </div>
             </div>
             <div class="col-12 col-lg-3">
-                <div class="card">
-                    <div class="card-header bg-success text-white text-uppercase">
-                        Thông tin về chúng tôi
+                <div class="card-header text-white text-uppercase" style="background-color: rgb(10, 138, 155);">
+                    <div class="waviy">
+                        <span style="--i:1">Thông</span>
+                        <span style="--i:2">tin</span>
+                        <span style="--i:3">Về</span>
+                        <span style="--i:4">chúng</span>
+                        <span style="--i:5">tôi</span>
                     </div>
-                    <ul class="infor_list">
-                        <li>Dịch vụ sửa chửa</li>
-                        <li>Mua bán sản phẩm củ</li>
-                        <li>Bảo hành</li>
-                        <li>Cung cấp linh kiện chính hảng</li>
-                        <li>0912.345.675</li>
-                        <li>Hỗ trở lắp đạt tai chỗ</li>
-                        <li>Đặt lịch sửa chữa</li>
-                    </ul>
                 </div>
+                <ul class="infor_list">
+                    <li>Dịch vụ sửa chữa & vệ sinh máy</li>
+                    <li>Mua bán sản phẩm củ</li>
+                    <li>Đổi củ lấy mới</li>
+                    <li>Cung cấp linh kiện chính hảng</li>
+                    <li>Hỗ trở lắp đặt tại nhà</li>
+                    <li>Chính sách bảo hành dài hạn</li>
+                    <li><a style="color: red;font-weight: 700;font-size: 21px" href="tel: 0903758676">0903.758.676</a></li>
+                    <li><a style="color: red;font-weight: 700;font-size: 21px" href="tel: 0898431993">0898.431.993</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -65,8 +70,15 @@
         <div class="row">
             <div class="col-sm">
                 <div class="card">
-                    <div class="service_info_  card-header text-white text-uppercase">
-                        Thông tin về công ty chúng tôi
+                    <div style="z-index: 1;border-radius: 5px;background-color: #c01508;font-family: monospace;font-size: 30px;color: #3d3d3d;" class="waviy">
+                        <span style="--i:1;color: #fff;font-family: monospace;font-size: 20px;">Thông</span>
+                        <span style="--i:2;color: #fff;font-family: monospace;font-size: 20px;">tin</span>
+                        <span style="--i:3;color: #fff;font-family: monospace;font-size: 20px;">về</span>
+                        <span style="--i:3;color: #fff;font-family: monospace;font-size: 20px;">công</span>
+                        <span style="--i:3;color: #fff;font-family: monospace;font-size: 20px;">ty</span>
+                        <span style="--i:4;color: #fff;font-family: monospace;font-size: 20px;">chúng</span>
+                        <span style="--i:5;color: #fff;font-family: monospace;font-size: 20px;">tôi</span>
+
                     </div>
                     <br>
                     <h2 style="text-align: center;color: rgb(73, 10, 247);font-family:Times New Roman">Chào mừng đến với công ty Thành Nam của
@@ -96,7 +108,7 @@
                             sự tươi mát của bầu không khí trong lành, sự sảng khoái, thoải mái về mặt tinh thần, góp
                             phần tạo sự phấn khởi, hăng hái trong công việc.</li>
                         <li><i style="font-size: 18px;">- Hãy liên hệ ngay <a href="tel: 0898431993">0898431993</a> - <a href="tel: 0903758676">0903758676</a> sẽ được công ty chúng tôi tư vấn thắc mắc của bạn hoàn toàn miễn phí kể cả thứ 7 và chủ nhật. <br>
-                            Địa chỉ: 187 Lê Văn Lương, Phước Kiểng, Nhà Bè, TP_HCM.</i> </li>
+                            Địa chỉ: 1023 Lê Văn Lương, Phước Kiểng, Nhà Bè, TP_HCM.</i> </li>
 
                     </ul>
                     <h4 style="text-align: center; color: rgb(245, 9, 186);font-family: Times New Roman;">Điện Lạnh Thành Nam - chất lượng tạo nên thương hiệu! <br>
@@ -106,138 +118,100 @@
             </div>
         </div>
     </div>
-    <section class="categories " >
-        <div class="container mt-3 mb-4" >
-            <div class="service_info_ card-header  text-white text-uppercase">
-                Thông tin dịch vụ sửa chửa của chúng tôi
-            </div>
-            <div class="col-sm" style="background-color: white">
-                <div class="card" style="border: none;">
-                    <div class="card-body"></div>
-                    <div class="row">
-                        <div class="categories__slider owl-carousel">
-                            <div class="col-lg-25">
-                                <div class="col-sm">
-                                    <div class="card">
-                                        <div class=" service_info card-header bg-success text-white text-uppercase">
-                                            Sữa máy giặt
-                                        </div>
-                                        <img class="img-fluid border-0"
-                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text home-product-item__name">Some quick example text to
-                                                build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
-                                                        >></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-25">
-                                <div class="col-sm">
-                                    <div class="card">
-                                        <div class=" service_info card-header bg-success text-white text-uppercase">
-                                            Sữa máy giặt
-                                        </div>
-                                        <img class="img-fluid border-0"
-                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text home-product-item__name">Some quick example text to
-                                                build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
-                                                        >></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-25">
-                                <div class="col-sm">
-                                    <div class="card">
-                                        <div class=" service_info card-header bg-success text-white text-uppercase">
-                                            Sữa máy giặt
-                                        </div>
-                                        <img class="img-fluid border-0"
-                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text home-product-item__name">Some quick example text to
-                                                build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
-                                                        >></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ccol-lg-25">
-                                <div class="col-sm">
-                                    <div class="card">
-                                        <div class=" service_info card-header bg-success text-white text-uppercase">
-                                            Sữa máy giặt
-                                        </div>
-                                        <img class="img-fluid border-0"
-                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text home-product-item__name">Some quick example text to
-                                                build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
-                                                        >></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-25">
-                                <div class="col-sm">
-                                    <div class="card">
-                                        <div class=" service_info card-header bg-success text-white text-uppercase">
-                                            Sữa máy giặt
-                                        </div>
-                                        <img class="img-fluid border-0"
-                                            src="https://kiendienlanh.com/image/cache/data/tai-xu%E1%BB%91ng-(1)-cr-220x145.jpg"
-                                            alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text home-product-item__name">Some quick example text to
-                                                build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="/client/detailService" class="btn btn-primary  btn-block">Chi tiết
-                                                        >></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+
+<div class="container mt-3 mb-5">
+    <div class="services-wrapper">
+        <div style="z-index: 1;border-radius: 5px;background-color: #c01508;font-family: monospace;font-size: 30px;color: #3d3d3d;" class="waviy">
+            <span style="--i:1;color: #fff;font-family: monospace;font-size: 20px;">Thông</span>
+            <span style="--i:2;color: #fff;font-family: monospace;font-size: 20px;">tin</span>
+            <span style="--i:3;color: #fff;font-family: monospace;font-size: 20px;">Về</span>
+            <span style="--i:4;color: #fff;font-family: monospace;font-size: 20px;">dịch</span>
+            <span style="--i:5;color: #fff;font-family: monospace;font-size: 20px;">vụ</span>
+            <span style="--i:6;color: #fff;font-family: monospace;font-size: 20px;">mua</span>
+            <span style="--i:7;color: #fff;font-family: monospace;font-size: 20px;">bán</span>
+            <span style="--i:8;color: #fff;font-family: monospace;font-size: 20px;">và</span>
+            <span style="--i:9;color: #fff;font-family: monospace;font-size: 20px;">sửa</span>
+            <span style="--i:10;color:#fff;font-family: monospace;font-size: 20px;">chữa</span>
+        </div>
+
+        <div class="container svcs-container">
+            <div class="row">
+                <div class="col-lg-4 services-box hoverServices animation_card" style="background-color: #cef6e9;">
+                    <a href="/client/product" style="text-decoration: none;">
+                        <div class="service-icon">
+                            <img alt="Valkyrie-1 Series" src="/client/img/moi.png">
                         </div>
-                    </div>
+                        <div class="info text-center">
+                            <h3 class="services-subheading" style="font-family: monospace;">
+                                Bán các loại thiết bị điện lạnh mới(chính hãng)
+                            </h3>
+                        </div>
+                        <div class="info col-lg-10 col-lg-offset-1">
+
+                            <ul class="service_list">
+                                <li>Các thiết bị diện lạnh như: điều hào, tủ lạnh, máy giặt, máy nóng lạnh...,
+                                    chính sách bảo hàng kèm theo hỗ trợ giao hàng tận nới và lắp đặt
+                                </li>
+                                <li>...</li>
+                                <li><small><i>Xem chi tiết</i></small></li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 services-box hoverServices animation_card" style="background-color: rgb(247, 204, 243);">
+                    <a href="/client/productOld" style="text-decoration: none;">
+                        <div class="service-icon">
+                            <img alt="Talon-2 Series" src="/client/img/cu.png">
+                        </div>
+                        <div class="info text-center">
+                            <h3 class="services-subheading">
+                                Bán các loại điện lạnh củ
+                            </h3>
+                        </div>
+                        <div class="info col-lg-10 col-lg-offset-1">
+                            <ul class="service_list">
+                                <li>Bán các loại thiết bị điện lạnh đã qua sử dụng, hỗ trợ bảo hành dài hạn</li>
+                                <li>Được sử dụng trải nghiệm 30 ngày nếu bị sự cố sẽ được đổi sản phẩm khác hoặc hoàn tiền lại 100% ...</li>
+                                <li>...</li>
+                                <li><small><i>Xem chi tiết</i></small></li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 services-box hoverServices animation_card last" style="background-color: rgb(247, 234, 166);">
+                    <a href="/client/service" style="text-decoration: none;">
+                        <div class="service-icon">
+                            <img alt="Lunar XPlorer" src="/client/img/sua_chua.png" >
+                        </div>
+                        <div class="info text-center">
+                            <h3 class="services-subheading">
+                                Dịch vụ
+                            </h3>
+                        </div>
+                        <div class="info col-lg-10 col-lg-offset-1">
+                            <ul class="service_list">
+                                <li>Vệ sinh các loại máy</li>
+                                <li>Bơm ga cho máy</li>
+                                <li>Trao đổi sản phẩm củ lấy mới </li>
+                                <li>Mua các thiết bị điện lạnh củ giá cao.</li>
+                                <li>...</li>
+                                <li><small><i>Xem chi tiết</i></small></li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
             </div>
+            <!--row-->
+
         </div>
-    </section>
+    </div>
+</div>
 
 
 
 
-
- <!-- Footer -->
+<!-- Footer -->
 <div th:replace="client/menu :: footer"></div>  
 
 
