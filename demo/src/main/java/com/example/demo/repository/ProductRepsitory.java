@@ -4,6 +4,7 @@ import com.example.demo.model.entities.Category;
 import com.example.demo.model.entities.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -30,13 +31,12 @@ public interface ProductRepsitory extends JpaRepository<Product,Integer> {
             " WHERE p.category = ?1 and p.productType=0")
     Page<Product> findByProductCateId(Category category, PageRequest of);
 
-
-
     @Query("SELECT p FROM Product p" +
             " WHERE p.name LIKE %?1% " +
             "OR p.category.name LIKE %?1%" +
             "OR p.manufacturer LIKE %?1%")
-    List<Product> findByKeyword(String name);
+    Page<Product> findByKeyword(String name, PageRequest of);
+
 
     @Query("SELECT SUM (p.qty) FROM Product p WHERE p.productType = 1")
      Integer findByCountProductTypeNew();
