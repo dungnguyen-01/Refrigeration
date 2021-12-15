@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.controller.body.ProductSearch;
 import com.example.demo.model.entities.Category;
 import com.example.demo.repository.CategoryRepsitory;
 import com.example.demo.repository.ProductRepsitory;
@@ -10,10 +11,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -81,11 +80,11 @@ public class ClientController {
     }
 
 
-
-    @RequestMapping("/client/productOld")
-    public String productOld(HttpServletRequest request, Model model, @RequestParam(name = "keyword", required = false) String keywrod) {
+    @RequestMapping(value = "/client/productOld")
+    public String productOld(HttpServletRequest request, Model model, @RequestParam(required = false) String keyword) {
         int page = 0;
         int size = 4;
+
         if (request.getParameter("page") != null && !request.getParameter("page").isEmpty()) {
             page = Integer.parseInt(request.getParameter("page")) - 1;
         }
@@ -93,16 +92,11 @@ public class ClientController {
             size = Integer.parseInt(request.getParameter("size"));
         }
         model.addAttribute("listCategory", categoryRepsitory.findAll());
-        if (StringUtils.isEmpty(keywrod)) {
-            if (request.getParameter("key") != null && !request.getParameter("key").isEmpty())
-                page = Integer.parseInt(request.getParameter("key")) - 1;
-
-            if (request.getParameter("size") != null && !request.getParameter("size").isEmpty())
-                size = Integer.parseInt(request.getParameter("size"));
-
-            model.addAttribute("listProduct", productRepsitory.findByProductProductTypeOld(PageRequest.of(page, size)));
+        if (keyword!=null && !StringUtils.isEmpty(keyword)) {
+            model.addAttribute("listProduct", productRepsitory.findByKeyword(keyword, PageRequest.of(page, size)));
+            model.addAttribute("key",keyword);
         }else
-            model.addAttribute("listProduct", productRepsitory.findByKeyword(keywrod, PageRequest.of(page, size)));
+            model.addAttribute("listProduct", productRepsitory.findByProductProductTypeOld(PageRequest.of(page, size)));
         return "client/productOld";
     }
 }

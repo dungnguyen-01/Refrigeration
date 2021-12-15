@@ -13,8 +13,8 @@
             </nav>
         </div>
         <div class="col-lg-4 search_col">
-            <form action="/client/productOld" method="post">
-                <div class="input-group" style="margin: auto;height: 47px;">
+            <form action="/client/productOld" method="get"  autocomplete="on">
+                <div class="input-group" style="margin: auto;height: 47px;" >
 
                     <input name="keyword" th:value="${keyword}" type="text" class="form-control" placeholder="Search..." required>
                     <div class="input-group-append">
@@ -109,10 +109,11 @@
                             </li>
                             <li class="page-item " th:classappend="${listProduct.number + 1 eq listProduct.totalPages} ? 'disabled'">
                                 <a class="page-link"
-                                   th:href="@{/client/productOld?page={id}(id=${listProduct.number + 2})}"
+                                   th:href="@{/client/productOld(page=${listProduct.number + 2}, keyword=*{key})}"
                                    aria-label="Next" title="Next Page" data-toggle="tooltip">
                                     <span aria-hidden="true">Next</span>
                                 </a>
+
                             </li>
                         </ul>
                     </nav>
