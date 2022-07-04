@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{/admin/menu :: area(~{:: main})}">
+<head>
+
+</head>
+<body th:fragment="main">
+
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 style="text-align: center;" class="card-title">Thêm sản phẩm</h2>
+                            <div class="table-responsive">
+                                <form action="add" method="post" enctype="multipart/form-data" style="font-size: 15px;">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Tên sản phẩm</label>
+                                            <input id="name" name="name" placeholder="Tên sản phẩm" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Giá </label>
+                                            <input id="price" name="price" placeholder="Giá bán" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Số lượng</label>
+                                            <input id="qty" name="qty" placeholder="Nhập số lượng" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="form-check form-group">
+                                            <label>Loại hàng</label>
+                                            <br>
+                                            <div class=" form-check-inline mt-3">
+                                                <label style="margin-right: 25px;"><input value="0" name="productType" type="radio"  checked style = "height: 18px; width: 18px;"> Sản phẩm củ</label>
+                                                <label><input value="1"  name="productType" type="radio" style = "height: 18px; width: 18px;"> Sản phẩm mới</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Loại sản phẩm</label>
+                                            <select id="category" name="category" class="form-select" style="font-size: 16px;color: #022424;background-color: rgba(241,241,139,0.75)">
+                                                <option selected>Chọn loại sản phẩm</option>
+                                                <th:block th:each="item : ${listCategory}">
+                                                    <option th:text="${item.name}" th:value="${item.id}"></option>
+                                                </th:block>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Hãng</label>
+                                            <select id="manufacturer" name="manufacturer"  placeholder="Chọn thương hiệu" class="form-select" style="font-size: 16px;color: #022424;background-color: rgba(241,241,139,0.75)">
+                                                <option value="SAMSUNG">SAMSUNG</option>
+                                                <option value="PANASONIC">PANASONIC</option>
+                                                <option value="HITACHI">HITACHI</option>
+                                                <option value="DAIKIN">DAIKIN</option>
+                                                <option value="ELECTROLUX">ELECTROLUX</option>
+                                                <option value="LG">LG</option>
+                                                <option value="AQUA">AQUA</option>
+                                                <option value="SONY">SONY</option>
+                                                <option value="TOSHIBA">TOSHIBA</option>
+                                                <option value="MITSUBISHI">MITSUBISHI</option>
+                                                <option value="SANYO">SANYO</option>
+                                                <option value="SHARP">SHARP</option>
+                                                <option value="BEKO">BEKO</option>
+                                                <option value="GREE">GREE</option>
+                                                <option value="CASPER">CASPER</option>
+                                                <option value="MIDEA">MIDEA</option>
+                                                <option value="Khác">Khác</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="imageF">Chọn ảnh 1</label>
+                                            <input type="file" name="imageF" id="imageF"  class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="imageS">Chọn ảnh 2</label>
+                                            <input type="file" name="imageF" id="imageS"  class="form-control"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="imageT">Chọn ảnh 3</label>
+                                            <input type="file" name="imageF" id="imageT" class="form-control" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Mô tả</label>
+                                            <textarea name="description" id="description"  placeholder="Mô tả sản phẩm" class="form-control" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-left: 20px;">
+                                        <a href="/admin/product"><input type="button" class="btn btn-primary" style="padding: 8px 50px;"  value="Trở lại"></a>
+                                        <a href=""><input type="submit" class="btn btn-success" style="padding:8px 50px;color: #fff;" value="Thêm sản phẩm"></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

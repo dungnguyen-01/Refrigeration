@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org"
+th:replace="~{/admin/menu :: area(~{:: main})}">
+
+
+<body th:fragment="main">
+
+    <div class="page-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Column -->
+          <!-- Column -->
+          <div class="col-md-6 col-lg-4 col-xlg-3">
+            <div class="card card-hover">
+              <div class="box bg-danger text-center">
+                <h1 class="font-light text-white">
+                  <i class="mdi mdi-receipt"></i>
+                </h1>
+                <h4 class="text-white">Thông tin sản phẩm mới</h4>
+                <h5 style="color: #062c33;font-weight: 700" >Số lượng: <i class="text-white">[(*{countNew})]</i></h5>
+                <h5>Tổng số tiền: <i class="text-white">[(*{#numbers.formatDecimal(totalNew, 0, 'POINT',0,'POINT')})] VNĐ</i></h5>
+              </div>
+            </div>
+          </div>
+          <!-- Column -->
+          <div class="col-md-6 col-lg-4 col-xlg-3">
+            <div class="card card-hover">
+              <div class="box bg-danger text-center">
+                <h1 class="font-light text-white">
+                  <i class="mdi mdi-receipt"></i>
+                </h1>
+                <h4 class="text-white">Thông tin sản phẩm củ</h4>
+                <h5 style="color: #062c33;font-weight: 700" >Số lượng: <i class="text-white">[(*{countOld})]</i></h5>
+                <h5>Tổng số tiền: <i class="text-white">[(*{#numbers.formatDecimal(totalOld, 0, 'POINT',0,'POINT')})] VNĐ</i></h5>
+              </div>
+            </div>
+          </div>
+          <!-- Column -->
+          <div class="col-md-6 col-lg-4 col-xlg-3">
+            <div class="card card-hover">
+              <div class="box text-center" style="background-color: rgb(134, 115, 6);">
+                <h1 class="font-light text-white">
+                  <i class="mdi mdi-receipt"></i>
+                </h1>
+                <h4 class="text-white">Tổng số tiền tất cả sản phẩm</h4>
+                <h5 style="color: #062c33;font-weight: 700" >Số lượng tất cả: <i class="text-white">[(*{countAll})]</i></h5>
+                <h5>Tổng số tiền: <i class="text-white">[(*{#numbers.formatDecimal(total, 0, 'POINT',0,'POINT')})] VNĐ</i></h5>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+    </div>
+</body>
+</html>

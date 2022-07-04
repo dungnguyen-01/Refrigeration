@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/client/menu :: area(~{:: main})}">
+<body th:fragment="main">
+
+<div class="container">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/client/index">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Sữa chữa</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-12 col-lg-3">
+            <div class="card bg-light mb-3 ">
+                <div style="background-color: #975400" class="card-header bg-primary text-white text-uppercase">DỊCH VỤ NỔI BẬT</div>
+                <ul class="list-group category_block" th:each="s: ${listService}" th:object="${s}">
+                    <li class="list-group-item category-item_link"><a class="text_a" th:href="@{|/client/detailService/*{id}|}">[(*{name})]</a></li>
+                </ul>
+            </div>
+            <div class="card bg-light mb-3 noibat">
+                <div style="background-color: cadetblue;text-align: center;font-weight: 800;font-family: serif;font-size: 20px;" class="card-header text-white text-uppercase">TIN TỨC </div>
+                <ul class="list-group  list-group-flush"style="font-size: 18px"  th:each="t : ${listTop}" th:object="${t}">
+                    <li class="list-group-item2">
+                        <a th:href="@{|/client/detailProd/*{id}|}"><i style="color: chartreuse;" class="fa fa-long-arrow-right" aria-hidden="true">
+                        </i> [(*{name})]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 animation_card" th:each="c: ${listService}" th:object="${c}">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img th:src="*{'data:image/jpeg;base64,'+{image}}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4  style="color: #902b2b;font-weight: 700;font-size: 28px" class="card-title cut_text_line1" th:text="*{name}"></h4>
+
+                            <div th:utext="*{description}" style="margin: 0;padding: 0;font-size: 14px" class="card-text home-product-item__name_2" > </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <a th:href="@{|/client/detailService/*{id}|}" class="btn btn-primary">Chi tiết
+                                        >></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-2 mb-5">
+                <nav aria-label="Pagination" th:if="${listService.totalPages gt 0}">
+                    <ul class="pagination justify-content-center font-weight-bold">
+                        <li class="page-item " th:classappend="${listService.number eq 0} ? 'disabled'">
+                            <a class="page-link"
+                               th:href="@{/client/service?page={id}(id=${listService.number lt 2 ? 1 : listService.number})}"
+                               aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+                                <span aria-hidden="true">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item " th:classappend="${i eq listService.number + 1} ? 'active'"
+                            th:each="i : ${#numbers.sequence( 1, listService.totalPages, 1)}">
+                            <a class="page-link" th:href="@{/client/service?page={id}(id=${i})}" th:text="${i}"
+                               th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+                        </li>
+                        <li class="page-item " th:classappend="${listService.number + 1 eq listService.totalPages} ? 'disabled'">
+                            <a class="page-link"
+                               th:href="@{/client/service?page={id}(id=${listService.number + 2})}"
+                               aria-label="Next" title="Next Page" data-toggle="tooltip">
+                                <span aria-hidden="true">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>

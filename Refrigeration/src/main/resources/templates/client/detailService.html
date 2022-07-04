@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/client/menu :: area(~{:: main})}">
+
+<body th:fragment="main">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/client/index">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="/client/p">Sữa chữa</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chi tiết dịch vụ</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <!-- Image -->
+            <div class="col" th:object="${service}">
+                <div class="card mb-3" >
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img th:src="*{'data:image/jpeg;base64,'+{image}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">[(*{name})]</h3>
+                                <div  th:utext="*{description}"> </div>
+                            </div>
+                            <div class=" mt-4" style="margin: 0;padding: 0;font-size: 16px;font-weight: 700;">
+                                <ul style="display: flex;justify-content:space-between;list-style: none;padding: 0;line-height: 50px;">
+                                    <li style="background-color: rgb(167, 35, 35);padding: 0 17px;"><a style="color: #fff;"  href="tel: 0903758676"><i class="fa fa-phone"></i> Gọi ngay: 0903.758.676</a></li>
+                                    <li style="background-color: aquamarine;padding: 0 35px;" ><a href="https://zalo.me/0903758676"  target="_blanl"><img style="height: 30px;width: 30px;"  src="/client/img/icon_zalomessage.png" alt=""> Zalo</a></li>
+                                    <li style="background-color: rgb(247, 245, 166);padding:0 25px;" ><a  href="https://www.facebook.com/%C4%90i%E1%BB%87n-l%E1%BA%A1nh-Th%C3%A0nh-Nam-102028988324495/"  target="_blanl"><img style="height: 30px;width: 30px;" src="/client/img/fb2.png" alt=""> Facebook</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="card bg-light mb-3">
+                    <div  class="card-header text-white text-uppercase"style="text-align: center;font-weight: 700;background-color: rgb(2, 54, 54);">Dịch vụ của chúng tôi</div>
+                    <ul  class="list-group category_block" th:each="c: ${listService}" th:object="${c}">
+                        <li class="list-group-item text-uppercase" style="background-color: darkkhaki;"> <a th:href="@{|/client/detailService/*{id}|}" th:text="*{name}"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Reviews -->
+            <div class="col-12" id="reviews">
+                <div class="card border-light mb-3">
+                    <div style="background-color: yellowgreen;" class="card-header text-uppercase"><h3 style="text-align: center;color: brown;font-weight: 800;">Liện hệ với chúng tôi để dược tư vấn miễn phí</h3></div>
+                    <div class="card-body">
+                        <div class="review" style="font-size: 17px; color:rgb(27, 54, 5);">
+                            <i> Hãy liên hệ ngay <a href="tel: 0898431993">0898431993</a> - <a href="tel: 0903758676">0903758676</a> sẽ được công ty chúng tôi tư vấn thắc mắc của bạn hoàn toàn miễn phí kể cả thứ 7 và chủ nhật.
+                                Ngoài ra, công ty chúng tôi còn cung cấp dịch vụ như:
+                                <ul style="list-style: none;">
+                                    <li>- Mua bán trao đổi đồ củ lấy mới</li>
+                                    <li>- Sửa chữa các thiết bị điện lạnh tại nhà</li>
+                                    <li>- Vệ sinh thiết bị điện lạnh</li>
+                                    <li>- Mua bán các thiết bị điện lạnh</li>
+                                </ul>
+                            </i>
+                            <i>Chính sách bảo hành rõ ràng hỗ trợ nhiệt tình.</i>
+                            <hr class="bg-white">
+                        </div>
+                        <div class="review" >
+                                            <span class="blockquote" style="text-align: center;">
+                                                <h3 style="color: rgb(41, 159, 228);" class="mb-0">Điện Lạnh Thành Nam - chất lượng tạo nên thương hiệu! <br> </h3>
+                                                <p style="text-transform: uppercase;color: brown;font-weight: 700;">uy tín - chất lượng - giá rẻ</p>
+                                            </span>
+                            <div style="color: rgb(241, 31, 31);">
+                                <h4><i class="fa fa-phone mr-4" style="color: rgb(75, 68, 68);"></i><a href="tel: 0898431993">0898431993</a> - <a href="tel: 0903758676">0903758676</a></h4>
+                                <h4><i class="fa fa-map-marker mr-4" style="color:#000;"></i> 1023 Lê Văn Lương, Phước Kiển, Nhà Bè, TP_HCM </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

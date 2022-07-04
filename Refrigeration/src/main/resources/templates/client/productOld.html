@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/client/menu :: area(~{:: main})}">
+<body th:fragment="main">
+
+<div class="container" style="margin-bottom: 10px;">
+    <div class="row">
+        <div class="col-lg-8">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/client/index">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Sản phẩm cũ</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-lg-4 search_col">
+            <form action="/client/productOld" method="post"  autocomplete="on">
+                <div class="input-group" style="margin: auto;height: 47px;" >
+                    <input name="keyword" th:value="${keyword}" type="text" class="form-control" placeholder="Search..." required>
+                    <div class="input-group-append">
+                        <input type="submit" class="btn btn-success" value="Search">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-3">
+            <div class="card bg-light mb-3">
+                <div style="background-color: #975400" class="card-header text-white text-uppercase"><i class="fa fa-list"></i> Loại sản phẩm</div>
+                <ul class="list-group category_block" th:each="c : ${listCategory}" th:object="${c}">
+                    <li class="list-group-item category-item_link"  >
+                        <a class="text_a" th:href="@{|/client/productOld?cateid=${c.id}|}">[(*{name})]</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card bg-light mb-3 noibat">
+                <div class="card-header bg-success text-white text-uppercase" style="text-align: center">Sản phẩm mới nhất</div>
+                <div class="card-body" th:each="c: ${listCateTop}" th:object="${c}">
+                    <a th:href="@{|/client/detailProd/*{id}|}" style="text-decoration: none">
+                    <img class="img-fluid img_infor" th:src="*{'data:image/jpeg;base64,'+{imageF}}" />
+                    <h5 class="card-title service_info home-product-item__name_2" style="font-weight: 700">[(*{name})]</h5>
+                    <p class="bloc_left_price" >Giá: [(*{#numbers.formatDecimal(price, 0, 'POINT',0,'POINT')})] VNĐ</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <th:block th:each="p : ${listProduct}" th:object="${p}">
+                    <a th:href="@{|/client/detailProd/*{id}|}" style="text-decoration: none">
+                        <div class="col-12 col-md-6 col-lg-6 mb-3"  >
+
+                            <div class="card animation_card" style="padding: 5px;background-color: rgb(255 255 231 / 75%);">
+                                <img th:src="*{'data:image/jpeg;base64,'+{imageF}}" class="card-img-top img_infor" alt="Card image cap">
+                                <div class="card-body" style="padding: 2px">
+                                    <h4 class="card-title service_info cut_text_line1  mt-2"><a class="cut_text_line1" th:href="@{|/client/detailProd/*{id}|}"  title="View Product">[(*{name})]</a></h4>
+                                    <p class="card-text"><small class="text-muted" >Hãng: [(*{manufacturer})]</small></p>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="btn btn-danger btn-block" >Giá bán: [(*{#numbers.formatDecimal(price, 0, 'POINT',0,'POINT')})] VNĐ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </th:block>
+
+                <div class="col-12 mt-2 mb-5">
+                    <nav aria-label="Pagination" th:if="${listProduct.totalPages gt 0}">
+                        <ul class="pagination justify-content-center font-weight-bold">
+                            <li class="page-item " th:classappend="${listProduct.number eq 0} ? 'disabled'">
+                                <a class="page-link"
+                                   th:href="@{/client/productOld(page=${listProduct.number lt 2 ? 1 : listProduct.number},
+                                   keyword=*{key}, cateid=*{cateid})}"
+                                   aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+                                    <span aria-hidden="true">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item" th:classappend="${i eq listProduct.number + 1} ? 'active'"
+                                th:each="i : ${#numbers.sequence( 1, listProduct.totalPages, 1)}">
+                                <a class="page-link" th:href="@{/client/productOld(page=${i}, keyword=*{key}, cateid=*{cateid})}" th:text="${i}"
+                                   th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+                            </li>
+                            <li class="page-item " th:classappend="${listProduct.number + 1 eq listProduct.totalPages} ? 'disabled'">
+                                <a class="page-link"
+                                   th:href="@{/client/productOld(page=${listProduct.number + 2}, keyword=*{key}, cateid=*{cateid})}"
+                                   aria-label="Next" title="Next Page" data-toggle="tooltip">
+                                    <span aria-hidden="true">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
